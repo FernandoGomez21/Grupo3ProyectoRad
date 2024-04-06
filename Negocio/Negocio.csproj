@@ -53,7 +53,9 @@
   <ItemGroup>
     <Compile Include="Comun\CargarCombos.cs" />
     <Compile Include="NCategoriaModels.cs" />
+    <Compile Include="NClienteModels.cs" />
     <Compile Include="NGrupoDescuento.cs" />
+    <Compile Include="NProductoModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
