@@ -62,6 +62,12 @@
     <Compile Include="BaseDatos\Models\ProductosModels.cs" />
     <Compile Include="BaseDatos\Models\UnidadMedida.cs" />
     <Compile Include="BaseDatos\ProyectoContext.cs" />
+    <Compile Include="Core\IRepository.cs" />
+    <Compile Include="Core\IUnitOfWork.cs" />
+    <Compile Include="Core\Repository.cs" />
+    <Compile Include="Core\UnitOfWork.cs" />
+    <Compile Include="DCategoriaModels.cs" />
+    <Compile Include="DGrupoDescuento.cs" />
     <Compile Include="Migrations\202404052334556_AddTablaCategoriaModels.cs" />
     <Compile Include="Migrations\202404052334556_AddTablaCategoriaModels.Designer.cs">
       <DependentUpon>202404052334556_AddTablaCategoriaModels.cs</DependentUpon>
