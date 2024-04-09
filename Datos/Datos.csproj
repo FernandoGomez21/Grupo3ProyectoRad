@@ -68,8 +68,10 @@
     <Compile Include="Core\UnitOfWork.cs" />
     <Compile Include="DCategoriaModels.cs" />
     <Compile Include="DClienteModels.cs" />
+    <Compile Include="DCondicionPago.cs" />
     <Compile Include="DGrupoDescuento.cs" />
     <Compile Include="DProductoModels.cs" />
+    <Compile Include="DUnidadMedida.cs" />
     <Compile Include="Migrations\202404052334556_AddTablaCategoriaModels.cs" />
     <Compile Include="Migrations\202404052334556_AddTablaCategoriaModels.Designer.cs">
       <DependentUpon>202404052334556_AddTablaCategoriaModels.cs</DependentUpon>
