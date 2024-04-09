@@ -76,6 +76,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VCondicionPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VCondicionPago.Designer.cs">
+      <DependentUpon>VCondicionPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VUnidadMedida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VUnidadMedida.Designer.cs">
+      <DependentUpon>VUnidadMedida.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CategoriaV.resx">
       <DependentUpon>CategoriaV.cs</DependentUpon>
     </EmbeddedResource>
@@ -94,6 +106,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="VCondicionPago.resx">
+      <DependentUpon>VCondicionPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VUnidadMedida.resx">
+      <DependentUpon>VUnidadMedida.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
