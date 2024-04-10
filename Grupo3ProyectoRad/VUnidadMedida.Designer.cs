@@ -28,49 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.TxtDias = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.TxtDescripcion = new System.Windows.Forms.TextBox();
             this.TxtCodigo = new System.Windows.Forms.TextBox();
-            this.TxtCondicionPago = new System.Windows.Forms.TextBox();
+            this.TxtUnidadMedidaId = new System.Windows.Forms.TextBox();
             this.CHKActivo = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.CHKActivos = new System.Windows.Forms.CheckBox();
             this.DGVDatos = new System.Windows.Forms.DataGridView();
+            this.BTNLimpiar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGVDatos)).BeginInit();
             this.SuspendLayout();
-            // 
-            // TxtDias
-            // 
-            this.TxtDias.Location = new System.Drawing.Point(258, 103);
-            this.TxtDias.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtDias.Name = "TxtDias";
-            this.TxtDias.Size = new System.Drawing.Size(254, 20);
-            this.TxtDias.TabIndex = 94;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(150, 99);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 20);
-            this.label5.TabIndex = 93;
-            this.label5.Text = "Dias";
             // 
             // btnEliminar
             // 
             this.btnEliminar.Enabled = false;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(384, 157);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEliminar.Location = new System.Drawing.Point(512, 193);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(88, 31);
+            this.btnEliminar.Size = new System.Drawing.Size(117, 38);
             this.btnEliminar.TabIndex = 92;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -80,10 +60,10 @@
             // 
             this.BtnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.BtnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAgregar.Location = new System.Drawing.Point(284, 157);
-            this.BtnAgregar.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnAgregar.Location = new System.Drawing.Point(379, 193);
+            this.BtnAgregar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(88, 31);
+            this.BtnAgregar.Size = new System.Drawing.Size(117, 38);
             this.BtnAgregar.TabIndex = 91;
             this.BtnAgregar.Text = "Guardar";
             this.BtnAgregar.UseVisualStyleBackColor = false;
@@ -91,38 +71,38 @@
             // 
             // TxtDescripcion
             // 
-            this.TxtDescripcion.Location = new System.Drawing.Point(258, 70);
-            this.TxtDescripcion.Margin = new System.Windows.Forms.Padding(2);
+            this.TxtDescripcion.Location = new System.Drawing.Point(344, 86);
+            this.TxtDescripcion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtDescripcion.Name = "TxtDescripcion";
-            this.TxtDescripcion.Size = new System.Drawing.Size(254, 20);
+            this.TxtDescripcion.Size = new System.Drawing.Size(337, 22);
             this.TxtDescripcion.TabIndex = 90;
             // 
             // TxtCodigo
             // 
-            this.TxtCodigo.Location = new System.Drawing.Point(258, 39);
-            this.TxtCodigo.Margin = new System.Windows.Forms.Padding(2);
+            this.TxtCodigo.Location = new System.Drawing.Point(344, 48);
+            this.TxtCodigo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtCodigo.Name = "TxtCodigo";
-            this.TxtCodigo.Size = new System.Drawing.Size(254, 20);
+            this.TxtCodigo.Size = new System.Drawing.Size(337, 22);
             this.TxtCodigo.TabIndex = 89;
             // 
-            // TxtCondicionPago
+            // TxtUnidadMedidaId
             // 
-            this.TxtCondicionPago.Enabled = false;
-            this.TxtCondicionPago.Location = new System.Drawing.Point(258, 7);
-            this.TxtCondicionPago.Margin = new System.Windows.Forms.Padding(2);
-            this.TxtCondicionPago.Name = "TxtCondicionPago";
-            this.TxtCondicionPago.ReadOnly = true;
-            this.TxtCondicionPago.Size = new System.Drawing.Size(76, 20);
-            this.TxtCondicionPago.TabIndex = 88;
+            this.TxtUnidadMedidaId.Enabled = false;
+            this.TxtUnidadMedidaId.Location = new System.Drawing.Point(344, 9);
+            this.TxtUnidadMedidaId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TxtUnidadMedidaId.Name = "TxtUnidadMedidaId";
+            this.TxtUnidadMedidaId.ReadOnly = true;
+            this.TxtUnidadMedidaId.Size = new System.Drawing.Size(100, 22);
+            this.TxtUnidadMedidaId.TabIndex = 88;
             // 
             // CHKActivo
             // 
             this.CHKActivo.AutoSize = true;
             this.CHKActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CHKActivo.Location = new System.Drawing.Point(174, 132);
-            this.CHKActivo.Margin = new System.Windows.Forms.Padding(2);
+            this.CHKActivo.Location = new System.Drawing.Point(231, 137);
+            this.CHKActivo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CHKActivo.Name = "CHKActivo";
-            this.CHKActivo.Size = new System.Drawing.Size(77, 24);
+            this.CHKActivo.Size = new System.Drawing.Size(94, 29);
             this.CHKActivo.TabIndex = 87;
             this.CHKActivo.Text = "Activo";
             this.CHKActivo.UseVisualStyleBackColor = true;
@@ -131,10 +111,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(150, 67);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(200, 82);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 20);
+            this.label4.Size = new System.Drawing.Size(125, 25);
             this.label4.TabIndex = 86;
             this.label4.Text = "Descripcion";
             // 
@@ -142,10 +121,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(184, 37);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(245, 46);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 20);
+            this.label3.Size = new System.Drawing.Size(81, 25);
             this.label3.TabIndex = 85;
             this.label3.Text = "Codigo";
             // 
@@ -153,24 +131,24 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(144, 7);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(156, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 20);
+            this.label2.Size = new System.Drawing.Size(169, 25);
             this.label2.TabIndex = 84;
-            this.label2.Text = "CondicionP";
+            this.label2.Text = "UnidadMedidaId";
             // 
             // CHKActivos
             // 
             this.CHKActivos.AutoSize = true;
             this.CHKActivos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CHKActivos.Location = new System.Drawing.Point(613, 142);
-            this.CHKActivos.Margin = new System.Windows.Forms.Padding(2);
+            this.CHKActivos.Location = new System.Drawing.Point(972, 193);
+            this.CHKActivos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CHKActivos.Name = "CHKActivos";
-            this.CHKActivos.Size = new System.Drawing.Size(188, 24);
+            this.CHKActivos.Size = new System.Drawing.Size(227, 29);
             this.CHKActivos.TabIndex = 83;
             this.CHKActivos.Text = "Mostrar solo activas";
             this.CHKActivos.UseVisualStyleBackColor = true;
+            this.CHKActivos.CheckedChanged += new System.EventHandler(this.CHKActivos_CheckedChanged);
             // 
             // DGVDatos
             // 
@@ -181,33 +159,48 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DGVDatos.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.DGVDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVDatos.Location = new System.Drawing.Point(139, 192);
-            this.DGVDatos.Margin = new System.Windows.Forms.Padding(2);
+            this.DGVDatos.Location = new System.Drawing.Point(25, 233);
+            this.DGVDatos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DGVDatos.Name = "DGVDatos";
             this.DGVDatos.RowHeadersWidth = 51;
             this.DGVDatos.RowTemplate.Height = 24;
-            this.DGVDatos.Size = new System.Drawing.Size(631, 348);
+            this.DGVDatos.Size = new System.Drawing.Size(1184, 428);
             this.DGVDatos.TabIndex = 82;
             this.DGVDatos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVDatos_CellDoubleClick);
+            this.DGVDatos.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGVDatos_RowHeaderMouseClick);
+            this.DGVDatos.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGVDatos_RowHeaderMouseDoubleClick);
+            // 
+            // BTNLimpiar
+            // 
+            this.BTNLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.BTNLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNLimpiar.Location = new System.Drawing.Point(644, 191);
+            this.BTNLimpiar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BTNLimpiar.Name = "BTNLimpiar";
+            this.BTNLimpiar.Size = new System.Drawing.Size(117, 38);
+            this.BTNLimpiar.TabIndex = 93;
+            this.BTNLimpiar.Text = "Limpiar";
+            this.BTNLimpiar.UseVisualStyleBackColor = false;
+            this.BTNLimpiar.Click += new System.EventHandler(this.BTNLimpiar_Click);
             // 
             // VUnidadMedida
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(941, 546);
-            this.Controls.Add(this.TxtDias);
-            this.Controls.Add(this.label5);
+            this.ClientSize = new System.Drawing.Size(1255, 672);
+            this.Controls.Add(this.BTNLimpiar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.TxtDescripcion);
             this.Controls.Add(this.TxtCodigo);
-            this.Controls.Add(this.TxtCondicionPago);
+            this.Controls.Add(this.TxtUnidadMedidaId);
             this.Controls.Add(this.CHKActivo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.CHKActivos);
             this.Controls.Add(this.DGVDatos);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "VUnidadMedida";
             this.Text = "VUnidadMedida";
             this.Load += new System.EventHandler(this.VUnidadMedida_Load);
@@ -218,19 +211,17 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox TxtDias;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button BtnAgregar;
         private System.Windows.Forms.TextBox TxtDescripcion;
         private System.Windows.Forms.TextBox TxtCodigo;
-        private System.Windows.Forms.TextBox TxtCondicionPago;
+        private System.Windows.Forms.TextBox TxtUnidadMedidaId;
         private System.Windows.Forms.CheckBox CHKActivo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox CHKActivos;
         private System.Windows.Forms.DataGridView DGVDatos;
+        private System.Windows.Forms.Button BTNLimpiar;
     }
 }

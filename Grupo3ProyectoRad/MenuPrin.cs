@@ -30,5 +30,17 @@ namespace Grupo3ProyectoRad
             GrupoDescuentoV descuento = new GrupoDescuentoV();
             descuento.Show();
         }
+
+        private void unidadDeMedidaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VUnidadMedida descuento = new VUnidadMedida();
+            descuento.Show();
+        }
+
+        private void condicionDePagoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VCondicionPago descuento = new VCondicionPago();
+            descuento.Show();
+        }
     }
 }

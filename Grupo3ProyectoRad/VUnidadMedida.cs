@@ -1,4 +1,5 @@
 ﻿using Datos.BaseDatos.Models;
+using Grupo3PrimerFase;
 using Negocio;
 using System;
 using System.Collections.Generic;
@@ -14,45 +15,46 @@ namespace Grupo3ProyectoRad
 {
     public partial class VUnidadMedida : Form
     {
-        NCondicionPago nCondicionPago;
+        NUnidadMedida nUnidaMedidad;
 
         public VUnidadMedida()
         {
             InitializeComponent();
-            nCondicionPago = new NCondicionPago();
+            nUnidaMedidad = new NUnidadMedida();
         }
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
             if (ValidarDatos())
             {
-                var condicionPago = new CondicionPago()
+                UnidadMedida Cliente = new UnidadMedida()
                 {
-                    Codigo = TxtCodigo.Text,
-                    DescripcionCP = TxtDescripcion.Text,
-                    Estado = CHKActivo.Checked,
-
-                    FechaCreacion = DateTime.Now
+                    Codigo = TxtCodigo.Text.ToString(),
+                    DescripcionUM = TxtDescripcion.Text.ToString(),
+                    FechaCreacion = DateTime.Now,
+                    Estado = CHKActivo.Checked
                 };
-
-                if (!string.IsNullOrEmpty(TxtCondicionPago.Text))
-                    condicionPago.CondicionPagoId = Convert.ToInt32(TxtCondicionPago.Text);
-
-                nCondicionPago.AgregarCondicionPago(condicionPago);
+                if (!string.IsNullOrEmpty(TxtUnidadMedidaId.Text) || !string.IsNullOrWhiteSpace(TxtUnidadMedidaId.Text))
+                {
+                    if (int.Parse(TxtUnidadMedidaId.Text.ToString()) != 0)
+                    {
+                        Cliente.UnidadMedidaId = int.Parse(TxtUnidadMedidaId.Text.ToString());
+                    }
+                }
+                nUnidaMedidad.AgregarUnidadMedida(Cliente);
                 LimpiarDatos();
                 CargarDatos();
             }
-
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿Está seguro que desea eliminar?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                if (!string.IsNullOrEmpty(TxtCondicionPago.Text))
+                if (!string.IsNullOrEmpty(TxtUnidadMedidaId.Text))
                 {
-                    var condicionPagoId = Convert.ToInt32(TxtCondicionPago.Text);
-                    nCondicionPago.EliminarCondicionPago(condicionPagoId);
+                    var condicionPagoId = Convert.ToInt32(TxtUnidadMedidaId.Text);
+                    nUnidaMedidad.EliminarUnidadMedida(condicionPagoId);
                     LimpiarDatos();
                     CargarDatos();
                 }
@@ -61,7 +63,7 @@ namespace Grupo3ProyectoRad
 
         private void LimpiarDatos()
         {
-            TxtCondicionPago.Clear();
+            TxtUnidadMedidaId.Clear();
             TxtCodigo.Clear();
             TxtDescripcion.Clear();
             CHKActivo.Checked = false;
@@ -75,7 +77,7 @@ namespace Grupo3ProyectoRad
             {
                 var row = DGVDatos.CurrentRow;
 
-                TxtCondicionPago.Text = row.Cells["CondicionPagoId"].Value.ToString();
+                TxtUnidadMedidaId.Text = row.Cells["CondicionPagoId"].Value.ToString();
                 TxtCodigo.Text = row.Cells["Codigo"].Value.ToString();
                 TxtDescripcion.Text = row.Cells["DescripcionCP"].Value.ToString();
                 CHKActivo.Checked = Convert.ToBoolean(row.Cells["Estado"].Value);
@@ -103,12 +105,50 @@ namespace Grupo3ProyectoRad
 
         private void CargarDatos()
         {
-            DGVDatos.DataSource = nCondicionPago.ObtenerTodasCondicionesPago();
+            DGVDatos.DataSource = nUnidaMedidad.TodasLasUnidadesMedida();
         }
 
         private void VUnidadMedida_Load(object sender, EventArgs e)
         {
             CargarDatos();
+        }
+
+        private void CHKActivos_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CHKActivos.Checked == true)
+            {
+                DGVDatos.DataSource = nUnidaMedidad.UnidadesMedidaActivas();
+            }
+            else
+            {
+                CargarDatos();
+            }
+        }
+
+        private void DGVDatos_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+            TxtUnidadMedidaId.Text = DGVDatos.CurrentRow.Cells["UnidadMedidaId"].Value.ToString();
+            TxtCodigo.Text = DGVDatos.CurrentRow.Cells["Codigo"].Value.ToString();
+            TxtDescripcion.Text = DGVDatos.CurrentRow.Cells["DescripcionUM"].Value.ToString();
+            CHKActivo.Checked = bool.Parse(DGVDatos.CurrentRow.Cells["Estado"].Value.ToString());
+            btnEliminar.Enabled = false;
+            btnEliminar.BackColor = Color.White;
+        }
+
+        private void DGVDatos_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            TxtUnidadMedidaId.Text = DGVDatos.CurrentRow.Cells["UnidadMedidaId"].Value.ToString();
+            TxtCodigo.Text = DGVDatos.CurrentRow.Cells["Codigo"].Value.ToString();
+            TxtDescripcion.Text = DGVDatos.CurrentRow.Cells["DescripcionUM"].Value.ToString();
+            CHKActivo.Checked = bool.Parse(DGVDatos.CurrentRow.Cells["Estado"].Value.ToString());
+            btnEliminar.Enabled = true;
+            btnEliminar.BackColor = Color.Red;
+        }
+
+        private void BTNLimpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarDatos();
         }
     }
 }

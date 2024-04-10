@@ -128,6 +128,7 @@ namespace Grupo3PrimerFase
             CHKActivo.Checked = bool.Parse(DGVDatos.CurrentRow.Cells["Estado"].Value.ToString());
             TxtPorcentaje.Text = DGVDatos.CurrentRow.Cells["Porcentaje"].Value.ToString();
             btnEliminar.Enabled = false;
+            btnEliminar.BackColor = Color.White;
         }
 
         private void DGVDatos_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -139,6 +140,11 @@ namespace Grupo3PrimerFase
             TxtPorcentaje.Text = DGVDatos.CurrentRow.Cells["Porcentaje"].Value.ToString();
             btnEliminar.Enabled = true;
             btnEliminar.BackColor = Color.Red;
+        }
+
+        private void BTNLimpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarDatos();
         }
     }
 }
