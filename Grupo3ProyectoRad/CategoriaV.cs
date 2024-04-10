@@ -130,5 +130,10 @@ namespace Grupo3PrimerFase
             btnEliminar.Enabled = true;
             btnEliminar.BackColor = Color.Red;
         }
+
+        private void BTNLimpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarDatos();
+        }
     }
 }
