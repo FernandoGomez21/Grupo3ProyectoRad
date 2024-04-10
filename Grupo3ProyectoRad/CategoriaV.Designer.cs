@@ -42,6 +42,7 @@
             this.DGVDatos = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.BTNLimpiar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGVDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -150,8 +151,8 @@
             // 
             this.DGVDatos.AllowUserToAddRows = false;
             this.DGVDatos.AllowUserToDeleteRows = false;
-            this.DGVDatos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.DGVDatos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DGVDatos.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.DGVDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -178,12 +179,26 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // BTNLimpiar
+            // 
+            this.BTNLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.BTNLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNLimpiar.Location = new System.Drawing.Point(497, 266);
+            this.BTNLimpiar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BTNLimpiar.Name = "BTNLimpiar";
+            this.BTNLimpiar.Size = new System.Drawing.Size(117, 38);
+            this.BTNLimpiar.TabIndex = 94;
+            this.BTNLimpiar.Text = "Limpiar";
+            this.BTNLimpiar.UseVisualStyleBackColor = false;
+            this.BTNLimpiar.Click += new System.EventHandler(this.BTNLimpiar_Click);
+            // 
             // CategoriaV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1127, 676);
+            this.Controls.Add(this.BTNLimpiar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.TxtDescripcion);
@@ -221,5 +236,6 @@
         private System.Windows.Forms.DataGridView DGVDatos;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button BTNLimpiar;
     }
 }
