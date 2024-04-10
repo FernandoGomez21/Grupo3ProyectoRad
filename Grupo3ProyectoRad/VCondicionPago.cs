@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -29,6 +30,7 @@ namespace Grupo3ProyectoRad
                 {
                     Codigo = TxtCodigo.Text,
                     DescripcionCP = TxtDescripcion.Text,
+                    Dias = int.Parse(TxtDias.Text),                  
                     Estado = CHKActivo.Checked,
 
                     FechaCreacion = DateTime.Now
@@ -63,26 +65,12 @@ namespace Grupo3ProyectoRad
             TxtCodigo.Clear();
             TxtDescripcion.Clear();
             CHKActivo.Checked = false;
-
+            TxtDias.Clear();
         }
 
         private void CargarDatos()
         {
             DGVDatos.DataSource = nCondicionPago.ObtenerTodasCondicionesPago();
-        }
-
-
-        private void DGVDatos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (DGVDatos.CurrentRow != null)
-            {
-                var row = DGVDatos.CurrentRow;
-
-                TxtCondicionPago.Text = row.Cells["UnidadMedidaId"].Value.ToString();
-                TxtCodigo.Text = row.Cells["Codigo"].Value.ToString();
-                TxtDescripcion.Text = row.Cells["DescripcionUM"].Value.ToString();
-                CHKActivo.Checked = Convert.ToBoolean(row.Cells["Estado"].Value);
-            }
         }
 
         private bool ValidarDatos()
@@ -99,13 +87,56 @@ namespace Grupo3ProyectoRad
             {
                 formularioValido = false;
             }
-
+            if (string.IsNullOrWhiteSpace(TxtDias.Text))
+            {
+                formularioValido = false;
+            }
             return formularioValido;
         }
 
         private void VCondicionPago_Load(object sender, EventArgs e)
         {
             CargarDatos();
+        }
+
+        private void DGVDatos_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+            TxtCondicionPago.Text = DGVDatos.CurrentRow.Cells["CondicionPagoId"].Value.ToString();
+            TxtCodigo.Text = DGVDatos.CurrentRow.Cells["Codigo"].Value.ToString();
+            TxtDescripcion.Text = DGVDatos.CurrentRow.Cells["DescripcionCP"].Value.ToString();
+            TxtDias.Text = DGVDatos.CurrentRow.Cells["Dias"].Value.ToString();
+            CHKActivo.Checked = bool.Parse(DGVDatos.CurrentRow.Cells["Estado"].Value.ToString());
+            btnEliminar.Enabled = false;
+            btnEliminar.BackColor = Color.White;
+        }
+
+        private void DGVDatos_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            TxtCondicionPago.Text = DGVDatos.CurrentRow.Cells["CondicionPagoId"].Value.ToString();
+            TxtCodigo.Text = DGVDatos.CurrentRow.Cells["Codigo"].Value.ToString();
+            TxtDescripcion.Text = DGVDatos.CurrentRow.Cells["DescripcionCP"].Value.ToString();
+            TxtDias.Text = DGVDatos.CurrentRow.Cells["Dias"].Value.ToString();
+            CHKActivo.Checked = bool.Parse(DGVDatos.CurrentRow.Cells["Estado"].Value.ToString());
+            btnEliminar.Enabled = true;
+            btnEliminar.BackColor = Color.Red;
+        }
+
+        private void CHKActivos_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CHKActivos.Checked == true)
+            {
+                DGVDatos.DataSource = nCondicionPago.CondicionesPagoActivas();
+            }
+            else
+            {
+                CargarDatos();
+            }
+        }
+
+        private void BTNLimpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarDatos();
         }
     }
 }
