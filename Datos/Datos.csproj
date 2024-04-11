@@ -70,6 +70,8 @@
     <Compile Include="DClienteModels.cs" />
     <Compile Include="DCondicionPago.cs" />
     <Compile Include="DGrupoDescuento.cs" />
+    <Compile Include="DPedido.cs" />
+    <Compile Include="DPedidoDetalle.cs" />
     <Compile Include="DProductoModels.cs" />
     <Compile Include="DUnidadMedida.cs" />
     <Compile Include="Migrations\202404052334556_AddTablaCategoriaModels.cs" />
