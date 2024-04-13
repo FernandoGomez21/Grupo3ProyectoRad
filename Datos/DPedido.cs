@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Datos.BaseDatos.Models;
 using Datos.Core;
 
@@ -27,24 +24,85 @@ namespace Datos
         public decimal SubTotal { get; set; }
         public decimal Descuento { get; set; }
 
-        public List<Pedido> TodosLosPedidos()
+        public List<Pedido> PedidosTodos()
         {
             return _unitOfWork.Repository<Pedido>().Consulta().ToList();
         }
 
         public int Agregar(Pedido pedido)
         {
-            _unitOfWork.Repository<Pedido>().Agregar(pedido);
-            return _unitOfWork.Guardar();
-        }
+            if (pedido.PedidoId == 0)
+            {
+                _unitOfWork.Repository<Pedido>().Agregar(pedido);
+                return _unitOfWork.Guardar();
+            }
+            else
+            {
+                var ClienteInDb = _unitOfWork.Repository<Pedido>().Consulta().FirstOrDefault(c => c.PedidoId == pedido.PedidoId);
+                if (ClienteInDb != null)
+                {
+                    ClienteInDb.PedidoId = pedido.PedidoId;
+                    ClienteInDb.ClienteId = pedido.ClienteId;
+                    ClienteInDb.FechaPedido = pedido.FechaPedido;
+                    ClienteInDb.Estado = pedido.Estado;
+                    ClienteInDb.Total = pedido.Total;
+                    ClienteInDb.SubTotal = pedido.SubTotal;
+                    ClienteInDb.Descuento = pedido.Descuento;
+                    _unitOfWork.Repository<Pedido>().Editar(pedido);
+                    return _unitOfWork.Guardar();
+                }
 
+                return 0;
+
+            }
+        }
+        public int AggPedido(Pedido pedido, List<PedidoDetalle> detalle)
+        {
+            if (pedido.PedidoId == 0)
+            {
+                _unitOfWork.Repository<Pedido>().Agregar(pedido);
+                _unitOfWork.Repository<PedidoDetalle>().AgregarRango(detalle);
+                return _unitOfWork.Guardar();
+            }
+            else
+            {
+                var ClienteInDb = _unitOfWork.Repository<Pedido>().Consulta().FirstOrDefault(c => c.PedidoId == pedido.PedidoId);
+                if (ClienteInDb != null)
+                {
+                    ClienteInDb.PedidoId = pedido.PedidoId;
+                    ClienteInDb.ClienteId = pedido.ClienteId;
+                    ClienteInDb.FechaCreacion = pedido.FechaCreacion;
+                    ClienteInDb.FechaPedido = pedido.FechaCreacion;
+                    ClienteInDb.Estado = pedido.Estado;
+                    ClienteInDb.Total = pedido.Total;
+                    ClienteInDb.SubTotal = pedido.SubTotal;
+                    ClienteInDb.Descuento = pedido.Descuento;
+                    _unitOfWork.Repository<Pedido>().Editar(pedido);
+                    _unitOfWork.Repository<PedidoDetalle>().AgregarRango(detalle);
+                    return _unitOfWork.Guardar();
+                }
+
+                return 0;
+
+            }
+        }
         public int CrearPedido(Pedido pedido, List<PedidoDetalle> detalle)
         {
             _unitOfWork.Repository<Pedido>().Agregar(pedido);
             _unitOfWork.Repository<PedidoDetalle>().AgregarRango(detalle);
             return _unitOfWork.Guardar();
         }
+        public int EliminarPedido(int PedidoId )
+        {
 
+            var pedidoInDb = _unitOfWork.Repository<Pedido>().Consulta().FirstOrDefault(c => c.PedidoId == PedidoId && c.Estado == false);
+            if (pedidoInDb != null)
+            {
+                _unitOfWork.Repository<Pedido>().Eliminar(pedidoInDb);
+                return _unitOfWork.Guardar();
+            }
+            return 0;
+        }
 
     }
 }

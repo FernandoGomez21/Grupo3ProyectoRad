@@ -1,15 +1,8 @@
-﻿using Datos.BaseDatos.Models;
-using Negocio;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
+﻿using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Datos.BaseDatos.Models;
+using Negocio;
 
 namespace Grupo3ProyectoRad
 {
@@ -30,7 +23,7 @@ namespace Grupo3ProyectoRad
                 {
                     Codigo = TxtCodigo.Text,
                     DescripcionCP = TxtDescripcion.Text,
-                    Dias = int.Parse(TxtDias.Text),                  
+                    Dias = int.Parse(TxtDias.Text),
                     Estado = CHKActivo.Checked,
 
                     FechaCreacion = DateTime.Now
@@ -55,6 +48,7 @@ namespace Grupo3ProyectoRad
                     nCondicionPago.EliminarCondicionPago(condicionPagoId);
                     LimpiarDatos();
                     CargarDatos();
+                    MessageBox.Show("Eliminado con Exito!!");
                 }
             }
         }

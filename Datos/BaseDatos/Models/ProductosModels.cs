@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Datos.BaseDatos.Models
 {
@@ -11,7 +7,9 @@ namespace Datos.BaseDatos.Models
     {
         [Key]
         public int ProductosId { get; set; }
-
+        [Required]
+        [MaxLength(50)]
+        public string ProductoDetalle { get; set; }
         public int UnidadMedidaId { get; set; }
         public UnidadMedida UnidadMedida { get; set; }
 
@@ -23,7 +21,6 @@ namespace Datos.BaseDatos.Models
         public bool Estado { get; set; }
 
         public Decimal PrecioCompra { get; set; }
-
 
     }
 }
