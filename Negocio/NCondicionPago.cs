@@ -1,11 +1,8 @@
-﻿using Datos.BaseDatos.Models;
-using Datos;
-using Negocio.Comun;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Datos;
+using Datos.BaseDatos.Models;
+using Negocio.Comun;
 
 namespace Negocio
 {

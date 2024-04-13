@@ -1,15 +1,8 @@
-﻿using Datos.BaseDatos.Models;
-using Grupo3PrimerFase;
-using Negocio;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Datos.BaseDatos.Models;
+using Negocio;
 
 namespace Grupo3ProyectoRad
 {
@@ -57,6 +50,7 @@ namespace Grupo3ProyectoRad
                     nUnidaMedidad.EliminarUnidadMedida(condicionPagoId);
                     LimpiarDatos();
                     CargarDatos();
+                    MessageBox.Show("Eliminado con Exito!!");
                 }
             }
         }
