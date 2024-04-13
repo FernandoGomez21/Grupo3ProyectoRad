@@ -70,6 +70,8 @@
     <Compile Include="DClienteModels.cs" />
     <Compile Include="DCondicionPago.cs" />
     <Compile Include="DGrupoDescuento.cs" />
+    <Compile Include="DPedido.cs" />
+    <Compile Include="DPedidoDetalle.cs" />
     <Compile Include="DProductoModels.cs" />
     <Compile Include="DUnidadMedida.cs" />
     <Compile Include="Migrations\202404052334556_AddTablaCategoriaModels.cs" />
@@ -112,6 +114,18 @@
     <Compile Include="Migrations\202404052345415_AddTablaFacturaDetalle.Designer.cs">
       <DependentUpon>202404052345415_AddTablaFacturaDetalle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202404122012119_CambiosenlaTablaProductosModels.cs" />
+    <Compile Include="Migrations\202404122012119_CambiosenlaTablaProductosModels.Designer.cs">
+      <DependentUpon>202404122012119_CambiosenlaTablaProductosModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404122040533_CambioParamtrosdelProductoDetalle.cs" />
+    <Compile Include="Migrations\202404122040533_CambioParamtrosdelProductoDetalle.Designer.cs">
+      <DependentUpon>202404122040533_CambioParamtrosdelProductoDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404130151120_CambioenTablaClientesModels.cs" />
+    <Compile Include="Migrations\202404130151120_CambioenTablaClientesModels.Designer.cs">
+      <DependentUpon>202404130151120_CambioenTablaClientesModels.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -149,6 +163,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202404052345415_AddTablaFacturaDetalle.resx">
       <DependentUpon>202404052345415_AddTablaFacturaDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404122012119_CambiosenlaTablaProductosModels.resx">
+      <DependentUpon>202404122012119_CambiosenlaTablaProductosModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404122040533_CambioParamtrosdelProductoDetalle.resx">
+      <DependentUpon>202404122040533_CambioParamtrosdelProductoDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404130151120_CambioenTablaClientesModels.resx">
+      <DependentUpon>202404130151120_CambioenTablaClientesModels.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

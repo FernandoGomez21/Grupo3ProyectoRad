@@ -1,10 +1,9 @@
-﻿using Datos.Core;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Datos.BaseDatos.Models;
+using Datos.Core;
 
 namespace Datos
 {
@@ -18,6 +17,7 @@ namespace Datos
         }
 
         public int ProductosId { get; set; }
+        public string ProductoDetalle { get; set; }
         public int UnidadMedidaId { get; set; }
         public UnidadMedida UnidadMedida { get; set; }
         public int CategoriaId { get; set; }
@@ -28,7 +28,11 @@ namespace Datos
 
         public List<ProductosModels> ProductosTodos()
         {
-            return unitOfWork.Repository<ProductosModels>().Consulta().ToList();
+            return unitOfWork.Repository<ProductosModels>()
+                    .Consulta()
+                    .Include(c => c.UnidadMedida)
+                    .Include(c => c.CategoriaModels)
+                    .ToList();
         }
 
         public int GuardarProducto(ProductosModels producto)
@@ -43,10 +47,10 @@ namespace Datos
                 var ProductoInDb = unitOfWork.Repository<ProductosModels>().Consulta().FirstOrDefault(p => p.ProductosId == producto.ProductosId);
                 if (ProductoInDb != null)
                 {
+
                     ProductoInDb.UnidadMedidaId = producto.UnidadMedidaId;
-                    ProductoInDb.UnidadMedida = producto.UnidadMedida;
+                    ProductoInDb.ProductoDetalle = producto.ProductoDetalle;
                     ProductoInDb.CategoriaId = producto.CategoriaId;
-                    ProductoInDb.CategoriaModels = producto.CategoriaModels;
                     ProductoInDb.FechaCreacion = producto.FechaCreacion;
                     ProductoInDb.Estado = producto.Estado;
                     ProductoInDb.PrecioCompra = producto.PrecioCompra;

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Grupo3PrimerFase;
 
@@ -20,27 +13,58 @@ namespace Grupo3ProyectoRad
 
         private void categoriaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CategoriaV categoria = new CategoriaV();
-            categoria.Show();
+
 
         }
 
         private void grupoDescuentoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GrupoDescuentoV descuento = new GrupoDescuentoV();
-            descuento.Show();
+            GrupoDescuentoV grupoDescuento = new GrupoDescuentoV();
+            grupoDescuento.Show();
         }
 
         private void unidadDeMedidaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            VUnidadMedida descuento = new VUnidadMedida();
-            descuento.Show();
+            VUnidadMedida unidadMedida = new VUnidadMedida();
+            unidadMedida.Show();
         }
 
         private void condicionDePagoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            VCondicionPago descuento = new VCondicionPago();
+            
+        }
+
+        private void pedidosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PedidoV descuento = new PedidoV();
             descuento.Show();
+            this.Hide();
+        }
+
+        private void pedidosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            VPedidos pedidos = new VPedidos();
+            pedidos.Show();
+            this.Hide();
+        }
+
+        private void categoriaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            CategoriaV categoria = new CategoriaV();
+            categoria.Show();
+        }
+
+        private void condicionDePagoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            VCondicionPago condicionPago = new VCondicionPago();
+            condicionPago.Show();
+        }
+
+        private void menuPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MenuPrin menuPrin = new MenuPrin();
+            menuPrin.Show();
+            this.Hide();
         }
     }
 }

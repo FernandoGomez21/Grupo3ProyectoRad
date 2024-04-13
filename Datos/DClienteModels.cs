@@ -1,10 +1,9 @@
-﻿using Datos.Core;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Datos.BaseDatos.Models;
+using Datos.Core;
 
 namespace Datos
 {
@@ -30,7 +29,11 @@ namespace Datos
 
         public List<ClienteModels> ClientesTodos()
         {
-            return unitOfWork.Repository<ClienteModels>().Consulta().ToList();
+            return unitOfWork.Repository<ClienteModels>()
+                            .Consulta()
+                            .Include(c => c.CondicionPago)
+                            .Include(c => c.GrupoDescuento)
+                            .ToList();
         }
 
         public int GuardarClientes(ClienteModels clientes)
@@ -49,9 +52,7 @@ namespace Datos
                     ClienteInDb.Nombres = clientes.Nombres;
                     ClienteInDb.Apellidos = clientes.Apellidos;
                     ClienteInDb.GrupoDescuentoId = clientes.GrupoDescuentoId;
-                    ClienteInDb.GrupoDescuento = clientes.GrupoDescuento;
-                    ClienteInDb.CategoriaId = clientes.CategoriaId;
-                    ClienteInDb.CategoriaModels = clientes.CategoriaModels;
+                    ClienteInDb.CondicionPagoId = clientes.CondicionPagoId;
                     ClienteInDb.Estado = clientes.Estado;
                     ClienteInDb.FechaCreacion = clientes.FechaCreacion;
                     unitOfWork.Repository<ClienteModels>().Editar(clientes);
