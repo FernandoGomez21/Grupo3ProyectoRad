@@ -74,13 +74,48 @@
     <Compile Include="MenuPrin.Designer.cs">
       <DependentUpon>MenuPrin.cs</DependentUpon>
     </Compile>
+    <Compile Include="PedidoV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PedidoV.Designer.cs">
+      <DependentUpon>PedidoV.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="VBuscarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VBuscarCliente.Designer.cs">
+      <DependentUpon>VBuscarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VBuscarPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VBuscarPedido.Designer.cs">
+      <DependentUpon>VBuscarPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vBuscarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vBuscarProducto.Designer.cs">
+      <DependentUpon>vBuscarProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="VCondicionPago.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VCondicionPago.Designer.cs">
       <DependentUpon>VCondicionPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VPedidos.Designer.cs">
+      <DependentUpon>VPedidos.cs</DependentUpon>
     </Compile>
     <Compile Include="VUnidadMedida.cs">
       <SubType>Form</SubType>
@@ -97,17 +132,28 @@
     <EmbeddedResource Include="MenuPrin.resx">
       <DependentUpon>MenuPrin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PedidoV.resx">
+      <DependentUpon>PedidoV.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="VBuscarCliente.resx">
+      <DependentUpon>VBuscarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VBuscarPedido.resx">
+      <DependentUpon>VBuscarPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vBuscarProducto.resx">
+      <DependentUpon>vBuscarProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VCondicionPago.resx">
       <DependentUpon>VCondicionPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VPedidos.resx">
+      <DependentUpon>VPedidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VUnidadMedida.resx">
       <DependentUpon>VUnidadMedida.cs</DependentUpon>
@@ -135,6 +181,33 @@
       <Project>{b001f300-e03a-401f-b6ab-84e88573ad70}</Project>
       <Name>Negocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guardar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lista.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nuevo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nuevo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pago.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\matricula.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-vector-find-icon-png-image_516019.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-vector-find-icon-png-image_5160191.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nuevo2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
