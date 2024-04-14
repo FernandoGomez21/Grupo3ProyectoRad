@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Grupo3ProyectoRad
 {
-    public partial class fmrfactura : Form
+    public partial class fmrfactura : MenuPrin
     {
 
         private NFactura nfactura;

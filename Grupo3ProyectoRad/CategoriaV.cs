@@ -7,7 +7,7 @@ using Negocio;
 
 namespace Grupo3PrimerFase
 {
-    public partial class CategoriaV : Form
+    public partial class CategoriaV : MenuPrin
     {
         private NCategoriaModels ncategoria;
         public CategoriaV()
@@ -27,6 +27,7 @@ namespace Grupo3PrimerFase
             TxtDescripcion.Text = "";
             CHKActivo.Checked = false;
             errorProvider1.Clear();
+            btnEliminar.BackColor = Color.White;
         }
         private void CategoriaV_Load(object sender, EventArgs e)
         {
@@ -60,15 +61,6 @@ namespace Grupo3PrimerFase
             {
                 cargarDatos();
             }
-        }
-
-        private void DGVDatos_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            TxtCategoriaId.Text = DGVDatos.CurrentRow.Cells["CategoriaId"].Value.ToString();
-            TxtCodigo.Text = DGVDatos.CurrentRow.Cells["Codigo"].Value.ToString();
-            TxtDescripcion.Text = DGVDatos.CurrentRow.Cells["DescripcionCM"].Value.ToString();
-            CHKActivo.Checked = bool.Parse(DGVDatos.CurrentRow.Cells["Estado"].Value.ToString());
-            btnEliminar.Enabled = false;
         }
 
         private void BtnAgregar_Click(object sender, EventArgs e)
@@ -115,6 +107,20 @@ namespace Grupo3PrimerFase
 
         }
 
+        private void BTNLimpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarDatos();
+        }
+        private void DGVDatos_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            TxtCategoriaId.Text = DGVDatos.CurrentRow.Cells["CategoriaId"].Value.ToString();
+            TxtCodigo.Text = DGVDatos.CurrentRow.Cells["Codigo"].Value.ToString();
+            TxtDescripcion.Text = DGVDatos.CurrentRow.Cells["DescripcionCM"].Value.ToString();
+            CHKActivo.Checked = bool.Parse(DGVDatos.CurrentRow.Cells["Estado"].Value.ToString());
+            btnEliminar.Enabled = false;
+            btnEliminar.BackColor= Color.White;
+        }
+
         private void DGVDatos_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             TxtCategoriaId.Text = DGVDatos.CurrentRow.Cells["CategoriaId"].Value.ToString();
@@ -123,11 +129,6 @@ namespace Grupo3PrimerFase
             CHKActivo.Checked = bool.Parse(DGVDatos.CurrentRow.Cells["Estado"].Value.ToString());
             btnEliminar.Enabled = true;
             btnEliminar.BackColor = Color.Red;
-        }
-
-        private void BTNLimpiar_Click(object sender, EventArgs e)
-        {
-            LimpiarDatos();
         }
     }
 }

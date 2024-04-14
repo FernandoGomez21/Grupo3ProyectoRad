@@ -6,7 +6,7 @@ using Negocio;
 
 namespace Grupo3ProyectoRad
 {
-    public partial class VUnidadMedida : Form
+    public partial class VUnidadMedida : MenuPrin
     {
         NUnidadMedida nUnidaMedidad;
 
@@ -66,17 +66,12 @@ namespace Grupo3ProyectoRad
 
         private void DGVDatos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
-            if (DGVDatos.CurrentRow != null)
-            {
-                var row = DGVDatos.CurrentRow;
-
-                TxtUnidadMedidaId.Text = row.Cells["CondicionPagoId"].Value.ToString();
-                TxtCodigo.Text = row.Cells["Codigo"].Value.ToString();
-                TxtDescripcion.Text = row.Cells["DescripcionCP"].Value.ToString();
-                CHKActivo.Checked = Convert.ToBoolean(row.Cells["Estado"].Value);
-
-            }
+            TxtUnidadMedidaId.Text = DGVDatos.CurrentRow.Cells["UnidadMedidaId"].Value.ToString();
+            TxtCodigo.Text = DGVDatos.CurrentRow.Cells["Codigo"].Value.ToString();
+            TxtDescripcion.Text = DGVDatos.CurrentRow.Cells["DescripcionUM"].Value.ToString();
+            CHKActivo.Checked = bool.Parse(DGVDatos.CurrentRow.Cells["Estado"].Value.ToString());
+            btnEliminar.Enabled = true;
+            btnEliminar.BackColor = Color.Red;
         }
         private bool ValidarDatos()
         {

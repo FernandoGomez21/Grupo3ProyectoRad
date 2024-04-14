@@ -28,7 +28,7 @@ namespace Grupo3ProyectoRad
 
         private void cargarDatos()
         {
-            var productos = nProducto.TodoslosProductos();
+            var productos = nProducto.ProductosActivos();
             var lista = from r in productos
                         select new
                         {

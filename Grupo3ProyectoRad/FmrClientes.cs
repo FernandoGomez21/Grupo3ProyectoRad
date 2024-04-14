@@ -13,7 +13,7 @@ using Negocio;
 
 namespace Grupo3ProyectoRad
 {
-    public partial class FmrClientes : Form
+    public partial class FmrClientes : MenuPrin
     {
 
         private NClienteModels nclientes;
