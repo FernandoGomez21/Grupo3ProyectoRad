@@ -57,10 +57,10 @@
             this.BTNLimpiarTodo = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.BTNBuscarCliente = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.TxtBuscar = new System.Windows.Forms.TextBox();
             this.BTNBuscar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGVDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -337,16 +337,6 @@
             this.BTNBuscarCliente.UseVisualStyleBackColor = true;
             this.BTNBuscarCliente.Click += new System.EventHandler(this.BTNBuscarCliente_Click);
             // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.Location = new System.Drawing.Point(769, 294);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(57, 42);
-            this.btnEliminar.TabIndex = 78;
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
             // btnConfirmar
             // 
             this.btnConfirmar.Image = ((System.Drawing.Image)(resources.GetObject("btnConfirmar.Image")));
@@ -379,6 +369,16 @@
             this.BTNBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BTNBuscar.UseVisualStyleBackColor = true;
             this.BTNBuscar.Click += new System.EventHandler(this.BTNBuscar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.Location = new System.Drawing.Point(769, 294);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(57, 42);
+            this.btnEliminar.TabIndex = 78;
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // VPedidos
             // 
@@ -463,7 +463,6 @@
         private System.Windows.Forms.CheckBox CHKEstado;
         private System.Windows.Forms.TextBox TxtSubTotal;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label11;
@@ -490,5 +489,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox TxtBuscar;
         private System.Windows.Forms.Button BTNBuscar;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

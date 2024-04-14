@@ -30,7 +30,7 @@ namespace Negocio
             var Descuentos = DescuentosActivos().Select(c => new
             {
                 c.GrupoDescuentoId,
-                c.DescripcionGD,
+                c.GrupoCombo,
             })
                                       .ToList();
             foreach (var item in Descuentos)
@@ -38,7 +38,7 @@ namespace Negocio
                 Datos.Add(new CargarCombos()
                 {
                     Valor = item.GrupoDescuentoId,
-                    Nombre = item.DescripcionGD
+                    Nombre = item.GrupoCombo
                 });
             }
 

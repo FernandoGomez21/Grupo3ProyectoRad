@@ -66,5 +66,17 @@ namespace Grupo3ProyectoRad
             menuPrin.Show();
             this.Hide();
         }
+
+        private void clientesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FmrClientes menuPrin = new FmrClientes();
+            menuPrin.Show();
+        }
+
+        private void productosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            fmproductos menuPrin = new fmproductos();
+            menuPrin.Show();
+        }
     }
 }

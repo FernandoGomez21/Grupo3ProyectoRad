@@ -126,6 +126,14 @@
     <Compile Include="Migrations\202404130151120_CambioenTablaClientesModels.Designer.cs">
       <DependentUpon>202404130151120_CambioenTablaClientesModels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202404140134207_CambiosTablaProductos.cs" />
+    <Compile Include="Migrations\202404140134207_CambiosTablaProductos.Designer.cs">
+      <DependentUpon>202404140134207_CambiosTablaProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404140139183_CambioTablaProductos.cs" />
+    <Compile Include="Migrations\202404140139183_CambioTablaProductos.Designer.cs">
+      <DependentUpon>202404140139183_CambioTablaProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -172,6 +180,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202404130151120_CambioenTablaClientesModels.resx">
       <DependentUpon>202404130151120_CambioenTablaClientesModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404140134207_CambiosTablaProductos.resx">
+      <DependentUpon>202404140134207_CambiosTablaProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404140139183_CambioTablaProductos.resx">
+      <DependentUpon>202404140139183_CambioTablaProductos.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
