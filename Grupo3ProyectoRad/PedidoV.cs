@@ -138,6 +138,7 @@ namespace Grupo3ProyectoRad
             TxtBuscarPedidos.Clear();
             errorProvider1.Clear();
             LBLFechaCreacion.Text = "Fecha de Creacion:";
+            dgvdetalle.Rows.Clear();
         }
         private void LimpiarClientes()
         {
@@ -365,7 +366,7 @@ namespace Grupo3ProyectoRad
             TxtBuscarPedidos.Text = vcliente.PedidoId;
             TxtClienteId.Text = vcliente.ClienteId;
             TxtBuscarClientes.Text = vcliente.ClienteId;
-            DTPFechaPedido.Value = DateTime.Parse(vcliente.FechaPedido);
+            DTPFechaPedido.Text = vcliente.FechaPedido;
             LBLFechaCreacion.Text = "Fecha de Creacion:"+vcliente.FechaCreacion;
             CHKRealizado.Checked = bool.Parse(vcliente.Estado);
             BuscarCliente();
