@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Odbc;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -340,12 +341,20 @@ namespace Grupo3ProyectoRad
 
                         if (int.Parse(TxtBuscarPedidos.Text) >= 1 && pedidos != null)
                         {
+                        if (pedidos.Estado == true)
+                        {
+                            MessageBox.Show("Pedido Realizado");
+                            limpiarTodo();
+                        }
+                        else
+                        {
                             TxtBuscarClientes.Text = pedidos.ClienteId.ToString();
                             TxtPedidoId.Text = pedidos.PedidoId.ToString();
                             DTPFechaPedido.Value = pedidos.FechaPedido;
                             LBLFechaCreacion.Text = "Fecha de Creacion:" + pedidos.FechaCreacion.ToString();
                             CHKRealizado.Checked = pedidos.Estado;
                             BuscarCliente();
+                        }
                         }
                         else
                         {
@@ -362,14 +371,22 @@ namespace Grupo3ProyectoRad
         {
             VBuscarPedido vcliente = new VBuscarPedido();
             vcliente.ShowDialog();
-            TxtPedidoId.Text = vcliente.PedidoId;
-            TxtBuscarPedidos.Text = vcliente.PedidoId;
-            TxtClienteId.Text = vcliente.ClienteId;
-            TxtBuscarClientes.Text = vcliente.ClienteId;
-            DTPFechaPedido.Text = vcliente.FechaPedido;
-            LBLFechaCreacion.Text = "Fecha de Creacion:"+vcliente.FechaCreacion;
-            CHKRealizado.Checked = bool.Parse(vcliente.Estado);
-            BuscarCliente();
+            if (vcliente.Estado =="True")
+            {
+                MessageBox.Show("Pedido Realizado");
+            }
+            else
+            {
+                TxtPedidoId.Text = vcliente.PedidoId;
+                TxtBuscarPedidos.Text = vcliente.PedidoId;
+                TxtClienteId.Text = vcliente.ClienteId;
+                TxtBuscarClientes.Text = vcliente.ClienteId;
+                DTPFechaPedido.Text = vcliente.FechaPedido;
+                LBLFechaCreacion.Text = "Fecha de Creacion:" + vcliente.FechaCreacion;
+                CHKRealizado.Checked = bool.Parse(vcliente.Estado);
+                BuscarCliente();
+            }
+
         }
     }
 }

@@ -82,9 +82,8 @@ namespace Grupo3ProyectoRad
         }
         private void cargarDatos()
         {
-            DGVDatos.DataSource = nPedido.PedidosActivos();
-
-
+            var clientes = nPedido.PedidosActivos().Select(c => new { c.PedidoId, c.ClienteId,c.Cliente.Nombres, c.FechaPedido, c.Estado,   c.Total, c.SubTotal, c.Descuento });
+            DGVDatos.DataSource = clientes.ToList();
         }
         private void VPedidos_Load(object sender, EventArgs e)
         {
@@ -108,7 +107,8 @@ namespace Grupo3ProyectoRad
         {
             if (CHKPendientes.Checked == true)
             {
-                DGVDatos.DataSource = nPedido.TodoslosPedidos();
+                var clientes = nPedido.TodoslosPedidos().Select(c => new { c.PedidoId, c.ClienteId, c.Cliente.Nombres, c.FechaPedido, c.Estado, c.Total, c.SubTotal, c.Descuento });
+                DGVDatos.DataSource = clientes.ToList();
             }
             else
             {

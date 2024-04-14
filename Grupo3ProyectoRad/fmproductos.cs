@@ -14,7 +14,7 @@ using Negocio;
 
 namespace Grupo3ProyectoRad
 {
-    public partial class fmproductos : Form
+    public partial class fmproductos : MenuPrin
     {
         private NProductoModels nproductos;
         private NCategoriaModels nCategoria;
