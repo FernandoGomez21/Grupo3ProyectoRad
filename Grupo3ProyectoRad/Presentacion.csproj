@@ -62,6 +62,18 @@
     <Compile Include="CategoriaV.Designer.cs">
       <DependentUpon>CategoriaV.cs</DependentUpon>
     </Compile>
+    <Compile Include="fmproductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmproductos.Designer.cs">
+      <DependentUpon>fmproductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FmrClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FmrClientes.Designer.cs">
+      <DependentUpon>FmrClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="GrupoDescuentoV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +143,12 @@
     </Compile>
     <EmbeddedResource Include="CategoriaV.resx">
       <DependentUpon>CategoriaV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fmproductos.resx">
+      <DependentUpon>fmproductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FmrClientes.resx">
+      <DependentUpon>FmrClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GrupoDescuentoV.resx">
       <DependentUpon>GrupoDescuentoV.cs</DependentUpon>

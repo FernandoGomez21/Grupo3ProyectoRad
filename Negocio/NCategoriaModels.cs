@@ -30,7 +30,7 @@ namespace Negocio
             var categorias = CategoriasActivas().Select(c => new
             {
                 c.CategoriaId,
-                c.DescripcionCM,
+                c.CategoriaCombo,
             })
                                       .ToList();
             foreach (var item in categorias)
@@ -38,7 +38,7 @@ namespace Negocio
                 Datos.Add(new CargarCombos()
                 {
                     Valor = item.CategoriaId,
-                    Nombre = item.DescripcionCM
+                    Nombre = item.CategoriaCombo
                 });
             }
 

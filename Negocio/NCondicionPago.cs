@@ -25,13 +25,13 @@ namespace Negocio
             return ObtenerTodasCondicionesPago().Where(c => c.Estado == true).ToList();
         }
 
-        public List<CargarCombos> CargarComboCondicionesPago()
+        public List<CargarCombos> CargaCombo()
         {
             List<CargarCombos> Datos = new List<CargarCombos>();
             var condicionesPago = CondicionesPagoActivas().Select(c => new
             {
                 c.CondicionPagoId,
-                c.DescripcionCP,
+                c.PagoCombo,
             }).ToList();
 
             foreach (var item in condicionesPago)
@@ -39,7 +39,7 @@ namespace Negocio
                 Datos.Add(new CargarCombos()
                 {
                     Valor = item.CondicionPagoId,
-                    Nombre = item.DescripcionCP
+                    Nombre = item.PagoCombo
                 });
             }
 

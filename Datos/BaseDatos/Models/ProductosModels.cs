@@ -8,8 +8,9 @@ namespace Datos.BaseDatos.Models
         [Key]
         public int ProductosId { get; set; }
         [Required]
-        [MaxLength(50)]
+        [MaxLength(100)]
         public string ProductoDetalle { get; set; }
+
         public int UnidadMedidaId { get; set; }
         public UnidadMedida UnidadMedida { get; set; }
 
@@ -19,8 +20,8 @@ namespace Datos.BaseDatos.Models
         [Required]
         public DateTime FechaCreacion { get; set; }
         public bool Estado { get; set; }
-
-        public Decimal PrecioCompra { get; set; }
+        [Required]
+        public decimal PrecioCompra { get; set; }
 
     }
 }
