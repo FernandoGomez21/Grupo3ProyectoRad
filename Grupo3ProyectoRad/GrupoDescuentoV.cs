@@ -7,7 +7,7 @@ using Negocio;
 
 namespace Grupo3PrimerFase
 {
-    public partial class GrupoDescuentoV : Form
+    public partial class GrupoDescuentoV : MenuPrin
     {
         private NGrupoDescuento ndescuento;
         public GrupoDescuentoV()

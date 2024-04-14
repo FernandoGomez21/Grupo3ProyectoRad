@@ -6,7 +6,7 @@ using Negocio;
 
 namespace Grupo3ProyectoRad
 {
-    public partial class VCondicionPago : Form
+    public partial class VCondicionPago : MenuPrin
     {
         NCondicionPago nCondicionPago;
         public VCondicionPago()

@@ -28,7 +28,7 @@ namespace Grupo3ProyectoRad
 
         private void cargarDatos()
         {
-            var productos = nProducto.TodoslosProductos();
+            var productos = nProducto.ProductosActivos();
             var lista = from r in productos
                         select new
                         {
@@ -62,6 +62,11 @@ namespace Grupo3ProyectoRad
             DescripcionCM = dgvProductos.CurrentRow.Cells["DescripcionCM"].Value.ToString();
             PrecioCompra = dgvProductos.CurrentRow.Cells["PrecioCompra"].Value.ToString();
             eliminar();
+        }
+
+        private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

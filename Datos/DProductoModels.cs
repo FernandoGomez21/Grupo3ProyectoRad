@@ -19,12 +19,10 @@ namespace Datos
         public int ProductosId { get; set; }
         public string ProductoDetalle { get; set; }
         public int UnidadMedidaId { get; set; }
-        public UnidadMedida UnidadMedida { get; set; }
         public int CategoriaId { get; set; }
-        public CategoriaModels CategoriaModels { get; set; }
         public DateTime FechaCreacion { get; set; }
         public bool Estado { get; set; }
-        public Decimal PrecioCompra { get; set; }
+        public decimal PrecioCompra { get; set; }
 
         public List<ProductosModels> ProductosTodos()
         {
@@ -44,25 +42,21 @@ namespace Datos
             }
             else
             {
-                var ProductoInDb = unitOfWork.Repository<ProductosModels>().Consulta().FirstOrDefault(p => p.ProductosId == producto.ProductosId);
+                var ProductoInDb = unitOfWork.Repository<ProductosModels>().Consulta().FirstOrDefault(c => c.ProductosId == producto.ProductosId);
                 if (ProductoInDb != null)
                 {
-
-                    ProductoInDb.UnidadMedidaId = producto.UnidadMedidaId;
                     ProductoInDb.ProductoDetalle = producto.ProductoDetalle;
+                    ProductoInDb.UnidadMedidaId = producto.UnidadMedidaId;
                     ProductoInDb.CategoriaId = producto.CategoriaId;
                     ProductoInDb.FechaCreacion = producto.FechaCreacion;
                     ProductoInDb.Estado = producto.Estado;
                     ProductoInDb.PrecioCompra = producto.PrecioCompra;
                     unitOfWork.Repository<ProductosModels>().Editar(producto);
                     return unitOfWork.Guardar();
-
                 }
-
                 return 0;
             }
         }
-
         public int EliminarProducto(int producto)
         {
             var ProductoInDb = unitOfWork.Repository<ProductosModels>().Consulta().FirstOrDefault(p => p.ProductosId == producto);

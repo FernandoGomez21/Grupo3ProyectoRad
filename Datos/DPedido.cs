@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using Datos.BaseDatos.Models;
 using Datos.Core;
@@ -26,7 +27,10 @@ namespace Datos
 
         public List<Pedido> PedidosTodos()
         {
-            return _unitOfWork.Repository<Pedido>().Consulta().ToList();
+            return _unitOfWork.Repository<Pedido>()
+                .Consulta()
+                 .Include(c => c.Cliente)
+                .ToList();
         }
 
         public int Agregar(Pedido pedido)

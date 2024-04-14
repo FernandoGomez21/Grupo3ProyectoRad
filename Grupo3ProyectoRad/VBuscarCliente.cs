@@ -24,11 +24,12 @@ namespace Grupo3ProyectoRad
         }
         private void cargarDatos()
         {
-            var productos = nCliente.TodoslosClientes();
+            var productos = nCliente.ClientesActivos();
             var lista = from r in productos
                         select new
                         {
                             r.ClienteId,
+                            r.Estado,
                             r.Nombres,
                             r.Apellidos,
                             r.CondicionPago.Dias,

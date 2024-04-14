@@ -57,10 +57,11 @@
             this.BTNLimpiarTodo = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.BTNBuscarCliente = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.TxtBuscar = new System.Windows.Forms.TextBox();
             this.BTNBuscar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGVDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -71,9 +72,9 @@
             this.CHKPendientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CHKPendientes.Location = new System.Drawing.Point(844, 304);
             this.CHKPendientes.Name = "CHKPendientes";
-            this.CHKPendientes.Size = new System.Drawing.Size(140, 29);
+            this.CHKPendientes.Size = new System.Drawing.Size(213, 29);
             this.CHKPendientes.TabIndex = 85;
-            this.CHKPendientes.Text = "Realizados";
+            this.CHKPendientes.Text = "Todos los Pedidos";
             this.CHKPendientes.UseVisualStyleBackColor = true;
             this.CHKPendientes.CheckedChanged += new System.EventHandler(this.CHKPendientes_CheckedChanged);
             // 
@@ -337,16 +338,6 @@
             this.BTNBuscarCliente.UseVisualStyleBackColor = true;
             this.BTNBuscarCliente.Click += new System.EventHandler(this.BTNBuscarCliente_Click);
             // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.Location = new System.Drawing.Point(769, 294);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(57, 42);
-            this.btnEliminar.TabIndex = 78;
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
             // btnConfirmar
             // 
             this.btnConfirmar.Image = ((System.Drawing.Image)(resources.GetObject("btnConfirmar.Image")));
@@ -380,12 +371,33 @@
             this.BTNBuscar.UseVisualStyleBackColor = true;
             this.BTNBuscar.Click += new System.EventHandler(this.BTNBuscar_Click);
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
+            this.btnEliminar.Location = new System.Drawing.Point(769, 294);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(57, 42);
+            this.btnEliminar.TabIndex = 78;
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(561, 41);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(164, 20);
+            this.label6.TabIndex = 219;
+            this.label6.Text = "Todos los Pedidos";
+            // 
             // VPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1022, 661);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.BTNBuscar);
             this.Controls.Add(this.TxtBuscar);
             this.Controls.Add(this.label5);
@@ -450,6 +462,7 @@
             this.Controls.SetChildIndex(this.label5, 0);
             this.Controls.SetChildIndex(this.TxtBuscar, 0);
             this.Controls.SetChildIndex(this.BTNBuscar, 0);
+            this.Controls.SetChildIndex(this.label6, 0);
             ((System.ComponentModel.ISupportInitialize)(this.DGVDatos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
@@ -463,7 +476,6 @@
         private System.Windows.Forms.CheckBox CHKEstado;
         private System.Windows.Forms.TextBox TxtSubTotal;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label11;
@@ -490,5 +502,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox TxtBuscar;
         private System.Windows.Forms.Button BTNBuscar;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Label label6;
     }
 }

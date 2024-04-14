@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Datos.BaseDatos.Models
 {
@@ -22,6 +23,7 @@ namespace Datos.BaseDatos.Models
 
         [Required]
         public DateTime FechaCreacion { get; set; }
-
+        [NotMapped]
+        public string GrupoCombo => $"{DescripcionGD} - {Porcentaje}";
     }
 }
