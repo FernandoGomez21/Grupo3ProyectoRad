@@ -66,5 +66,17 @@ namespace Grupo3ProyectoRad
             menuPrin.Show();
             this.Hide();
         }
+
+        private void MenuPrin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void facturaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fmrfactura fromulariofactura = new fmrfactura();
+            fromulariofactura.Show(); 
+            
+        }
     }
 }
