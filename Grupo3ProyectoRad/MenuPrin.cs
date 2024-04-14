@@ -77,7 +77,6 @@ namespace Grupo3ProyectoRad
         {
             fmproductos menuPrin = new fmproductos();
             menuPrin.Show();
-
         }
     }
 }

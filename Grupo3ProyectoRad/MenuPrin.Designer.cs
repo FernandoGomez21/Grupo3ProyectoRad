@@ -40,7 +40,6 @@
             this.facturacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pedidosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-
             this.productosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu.SuspendLayout();
             this.SuspendLayout();
@@ -125,8 +124,7 @@
             // 
             this.facturacionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pedidosToolStripMenuItem1,
-            this.pedidosToolStripMenuItem,
-            this.facturaToolStripMenuItem});
+            this.pedidosToolStripMenuItem});
             this.facturacionToolStripMenuItem.Name = "facturacionToolStripMenuItem";
             this.facturacionToolStripMenuItem.Size = new System.Drawing.Size(98, 24);
             this.facturacionToolStripMenuItem.Text = "Facturacion";
@@ -151,7 +149,6 @@
             this.productosToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.productosToolStripMenuItem1.Text = "Productos";
             this.productosToolStripMenuItem1.Click += new System.EventHandler(this.productosToolStripMenuItem1_Click);
-
             // 
             // MenuPrin
             // 
@@ -164,7 +161,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Principal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.MenuPrin_Load);
             this.Menu.ResumeLayout(false);
             this.Menu.PerformLayout();
             this.ResumeLayout(false);
@@ -185,7 +181,6 @@
         private System.Windows.Forms.ToolStripMenuItem categoriaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem condicionDePagoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem menuPrincipalToolStripMenuItem;
-
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem1;
     }
