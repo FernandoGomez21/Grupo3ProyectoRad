@@ -55,6 +55,7 @@
     <Compile Include="NCategoriaModels.cs" />
     <Compile Include="NClienteModels.cs" />
     <Compile Include="NCondicionPago.cs" />
+    <Compile Include="NFactura.cs" />
     <Compile Include="NGrupoDescuento.cs" />
     <Compile Include="NPedido.cs" />
     <Compile Include="NProductoModels.cs" />
