@@ -63,10 +63,5 @@ namespace Grupo3ProyectoRad
             PrecioCompra = dgvProductos.CurrentRow.Cells["PrecioCompra"].Value.ToString();
             eliminar();
         }
-
-        private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }
