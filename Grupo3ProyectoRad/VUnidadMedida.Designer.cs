@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnEliminar = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VUnidadMedida));
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.TxtDescripcion = new System.Windows.Forms.TextBox();
             this.TxtCodigo = new System.Windows.Forms.TextBox();
@@ -41,32 +41,20 @@
             this.DGVDatos = new System.Windows.Forms.DataGridView();
             this.BTNLimpiar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.BTNEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGVDatos)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Enabled = false;
-            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(512, 258);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(117, 38);
-            this.btnEliminar.TabIndex = 92;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // BtnAgregar
             // 
             this.BtnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.BtnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAgregar.Location = new System.Drawing.Point(379, 258);
+            this.BtnAgregar.Image = global::Grupo3ProyectoRad.Properties.Resources.guardar;
+            this.BtnAgregar.Location = new System.Drawing.Point(465, 233);
             this.BtnAgregar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(117, 38);
+            this.BtnAgregar.Size = new System.Drawing.Size(65, 61);
             this.BtnAgregar.TabIndex = 91;
-            this.BtnAgregar.Text = "Guardar";
             this.BtnAgregar.UseVisualStyleBackColor = false;
             this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
@@ -175,12 +163,12 @@
             // 
             this.BTNLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.BTNLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTNLimpiar.Location = new System.Drawing.Point(644, 256);
+            this.BTNLimpiar.Image = global::Grupo3ProyectoRad.Properties.Resources.cancelar;
+            this.BTNLimpiar.Location = new System.Drawing.Point(639, 233);
             this.BTNLimpiar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BTNLimpiar.Name = "BTNLimpiar";
-            this.BTNLimpiar.Size = new System.Drawing.Size(117, 38);
+            this.BTNLimpiar.Size = new System.Drawing.Size(65, 61);
             this.BTNLimpiar.TabIndex = 93;
-            this.BTNLimpiar.Text = "Limpiar";
             this.BTNLimpiar.UseVisualStyleBackColor = false;
             this.BTNLimpiar.Click += new System.EventHandler(this.BTNLimpiar_Click);
             // 
@@ -194,14 +182,25 @@
             this.label1.TabIndex = 94;
             this.label1.Text = "Todas las Unidades de Medida";
             // 
+            // BTNEliminar
+            // 
+            this.BTNEliminar.Enabled = false;
+            this.BTNEliminar.Image = ((System.Drawing.Image)(resources.GetObject("BTNEliminar.Image")));
+            this.BTNEliminar.Location = new System.Drawing.Point(550, 233);
+            this.BTNEliminar.Name = "BTNEliminar";
+            this.BTNEliminar.Size = new System.Drawing.Size(60, 61);
+            this.BTNEliminar.TabIndex = 181;
+            this.BTNEliminar.UseVisualStyleBackColor = true;
+            this.BTNEliminar.Click += new System.EventHandler(this.BTNEliminar_Click_1);
+            // 
             // VUnidadMedida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1255, 672);
+            this.Controls.Add(this.BTNEliminar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BTNLimpiar);
-            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.TxtDescripcion);
             this.Controls.Add(this.TxtCodigo);
@@ -227,9 +226,9 @@
             this.Controls.SetChildIndex(this.TxtCodigo, 0);
             this.Controls.SetChildIndex(this.TxtDescripcion, 0);
             this.Controls.SetChildIndex(this.BtnAgregar, 0);
-            this.Controls.SetChildIndex(this.btnEliminar, 0);
             this.Controls.SetChildIndex(this.BTNLimpiar, 0);
             this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.BTNEliminar, 0);
             ((System.ComponentModel.ISupportInitialize)(this.DGVDatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -237,7 +236,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button BtnAgregar;
         private System.Windows.Forms.TextBox TxtDescripcion;
         private System.Windows.Forms.TextBox TxtCodigo;
@@ -250,5 +248,6 @@
         private System.Windows.Forms.DataGridView DGVDatos;
         private System.Windows.Forms.Button BTNLimpiar;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button BTNEliminar;
     }
 }

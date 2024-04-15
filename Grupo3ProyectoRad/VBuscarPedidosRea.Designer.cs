@@ -1,6 +1,6 @@
 ﻿namespace Grupo3ProyectoRad
 {
-    partial class VBuscarPedido
+    partial class VBuscarPedidosRea
     {
         /// <summary>
         /// Required designer variable.
@@ -38,13 +38,14 @@
             this.dgvProductos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvProductos.BackgroundColor = System.Drawing.SystemColors.ControlDark;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductos.Location = new System.Drawing.Point(12, 41);
+            this.dgvProductos.Location = new System.Drawing.Point(12, 39);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.RowHeadersWidth = 51;
             this.dgvProductos.RowTemplate.Height = 24;
-            this.dgvProductos.Size = new System.Drawing.Size(1014, 498);
-            this.dgvProductos.TabIndex = 10;
+            this.dgvProductos.Size = new System.Drawing.Size(961, 555);
+            this.dgvProductos.TabIndex = 12;
             this.dgvProductos.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvProductos_RowHeaderMouseDoubleClick);
             // 
             // label1
@@ -53,23 +54,23 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(370, 9);
+            this.label1.Location = new System.Drawing.Point(370, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(224, 20);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Lista de Pedidos Activos ";
+            this.label1.Size = new System.Drawing.Size(249, 20);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Lista de Pedidos Realizados";
             // 
-            // VBuscarPedido
+            // VBuscarPedidosRea
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1038, 551);
+            this.ClientSize = new System.Drawing.Size(985, 606);
             this.Controls.Add(this.dgvProductos);
             this.Controls.Add(this.label1);
-            this.Name = "VBuscarPedido";
-            this.Text = "VBuscarPedido";
-            this.Load += new System.EventHandler(this.VBuscarPedido_Load);
+            this.Name = "VBuscarPedidosRea";
+            this.Text = "VBuscarPedidosIna";
+            this.Load += new System.EventHandler(this.VBuscarPedidosIna_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -28,6 +28,10 @@ namespace Negocio
         {
             return dpedido.PedidosTodos().Where(c => c.Estado == false).ToList();
         }
+        public List<Pedido> pedidosInactivos()
+        {
+            return dpedido.PedidosTodos().Where(c => c.Estado == true).ToList();
+        }
         public int GuardarDetalle(List<PedidoDetalle> detalle) //Primer Video
         {
             return dPedidoDetalle.AgregarRango(detalle);

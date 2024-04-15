@@ -11,7 +11,7 @@ using Negocio;
 
 namespace Grupo3ProyectoRad
 {
-    public partial class VBuscarPedido : Form
+    public partial class VBuscarPedidosRea : Form
     {
         NPedido nPedido;
 
@@ -21,7 +21,7 @@ namespace Grupo3ProyectoRad
         public string FechaPedido { get; set; }
         public string Estado { get; set; }
 
-        public VBuscarPedido()
+        public VBuscarPedidosRea()
         {
             InitializeComponent();
             nPedido = new NPedido();
@@ -34,6 +34,8 @@ namespace Grupo3ProyectoRad
                         {
                             r.PedidoId,
                             r.ClienteId,
+                            r.Cliente.Nombres,
+                            r.Cliente.Apellidos,
                             r.FechaCreacion,
                             r.FechaPedido,
                             r.Estado,
@@ -53,8 +55,11 @@ namespace Grupo3ProyectoRad
             FechaCreacion = dgvProductos.CurrentRow.Cells["FechaCreacion"].Value.ToString();
             FechaPedido = dgvProductos.CurrentRow.Cells["FechaPedido"].Value.ToString();
             Estado = dgvProductos.CurrentRow.Cells["Estado"].Value.ToString();
-           
             this.Visible = false;
+        }
+        private void VBuscarPedidosIna_Load(object sender, EventArgs e)
+        {
+            cargarDatos();
         }
     }
 }
