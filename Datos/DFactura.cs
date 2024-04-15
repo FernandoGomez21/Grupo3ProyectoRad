@@ -43,39 +43,33 @@ namespace Datos
 
         public int GuardarFactura(Factura factura)
         {
-            if (factura.FacturaId == 0)
-            {
-                unitOfWork.Repository<Factura>().Agregar(factura);
-                return unitOfWork.Guardar();
-            }
-            else
-            {
+                if (factura.FacturaId == 0)
+                {
+                    unitOfWork.Repository<Factura>().Agregar(factura);
+                    return unitOfWork.Guardar();
+                }
+                else
+                {
                 var FacturaInDb = unitOfWork.Repository<Factura>().Consulta().FirstOrDefault(p => p.FacturaId == factura.FacturaId);
                 if (FacturaInDb != null)
-                {
-
-                    FacturaInDb.ClienteId = factura.ClienteId;
-                    FacturaInDb.PedidoId = factura.PedidoId;
-                    FacturaInDb.FechaCreacion = factura.FechaCreacion;
-                    FacturaInDb.FechaCreacion = factura.FechaCreacion;
-                    FacturaInDb.FechaFactura = factura.FechaFactura;
-                    FacturaInDb.Estado = factura.Estado;
-                    FacturaInDb.Total = factura.Total;
-                    FacturaInDb.SubTotal = factura.SubTotal;
-                    FacturaInDb.Descuento = factura.Descuento;
-                    unitOfWork.Repository<Factura>().Editar(factura);
-                    return unitOfWork.Guardar();
-
+                    {
+                        FacturaInDb.ClienteId = factura.ClienteId;
+                        FacturaInDb.PedidoId = factura.PedidoId;
+                        FacturaInDb.FechaCreacion = factura.FechaCreacion;
+                        FacturaInDb.FechaCreacion = factura.FechaCreacion;
+                        FacturaInDb.FechaFactura = factura.FechaFactura;
+                        FacturaInDb.Estado = factura.Estado;
+                        FacturaInDb.Total = factura.Total;
+                        FacturaInDb.SubTotal = factura.SubTotal;
+                        FacturaInDb.Descuento = factura.Descuento;
+                        unitOfWork.Repository<Factura>().Editar(factura);
+                        return unitOfWork.Guardar();
+                    }
+                    return 0;
                 }
 
-                return 0;
             }
 
-
-
-
-
-        }
 
 
         public int EliminarFactura(int factura)

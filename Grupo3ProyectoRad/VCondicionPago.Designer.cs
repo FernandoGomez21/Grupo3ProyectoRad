@@ -63,12 +63,12 @@
             // 
             this.BtnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.BtnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAgregar.Image = global::Grupo3ProyectoRad.Properties.Resources.guardar;
             this.BtnAgregar.Location = new System.Drawing.Point(202, 272);
             this.BtnAgregar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnAgregar.Name = "BtnAgregar";
             this.BtnAgregar.Size = new System.Drawing.Size(117, 38);
             this.BtnAgregar.TabIndex = 102;
-            this.BtnAgregar.Text = "Guardar";
             this.BtnAgregar.UseVisualStyleBackColor = false;
             this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
@@ -194,12 +194,12 @@
             // 
             this.BTNLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.BTNLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNLimpiar.Image = global::Grupo3ProyectoRad.Properties.Resources.cancelar;
             this.BTNLimpiar.Location = new System.Drawing.Point(447, 272);
             this.BTNLimpiar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BTNLimpiar.Name = "BTNLimpiar";
             this.BTNLimpiar.Size = new System.Drawing.Size(117, 38);
             this.BTNLimpiar.TabIndex = 106;
-            this.BTNLimpiar.Text = "Limpiar";
             this.BTNLimpiar.UseVisualStyleBackColor = false;
             this.BTNLimpiar.Click += new System.EventHandler(this.BTNLimpiar_Click);
             // 
@@ -233,10 +233,26 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.CHKActivos);
             this.Controls.Add(this.DGVDatos);
+            this.Location = new System.Drawing.Point(0, 0);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "VCondicionPago";
             this.Text = "VCondicionPago";
             this.Load += new System.EventHandler(this.VCondicionPago_Load);
+            this.Controls.SetChildIndex(this.DGVDatos, 0);
+            this.Controls.SetChildIndex(this.CHKActivos, 0);
+            this.Controls.SetChildIndex(this.label2, 0);
+            this.Controls.SetChildIndex(this.label3, 0);
+            this.Controls.SetChildIndex(this.label4, 0);
+            this.Controls.SetChildIndex(this.CHKActivo, 0);
+            this.Controls.SetChildIndex(this.TxtCondicionPago, 0);
+            this.Controls.SetChildIndex(this.TxtCodigo, 0);
+            this.Controls.SetChildIndex(this.TxtDescripcion, 0);
+            this.Controls.SetChildIndex(this.BtnAgregar, 0);
+            this.Controls.SetChildIndex(this.btnEliminar, 0);
+            this.Controls.SetChildIndex(this.label5, 0);
+            this.Controls.SetChildIndex(this.TxtDias, 0);
+            this.Controls.SetChildIndex(this.BTNLimpiar, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.DGVDatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

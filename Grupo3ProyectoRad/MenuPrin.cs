@@ -68,16 +68,22 @@ namespace Grupo3ProyectoRad
             menuPrin.Show();
             this.Hide();
         }
-        private void pedidosToolStripMenuItem2_Click(object sender, EventArgs e)
+        private void pedidoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             VPedidos pedidos = new VPedidos();
             pedidos.Show();
             this.Hide();
         }
-
         private void pedidoDetalleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PedidoV descuento = new PedidoV();
+            descuento.Show();
+            this.Hide();
+        }
+
+        private void facturasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fmrfactura descuento = new fmrfactura();
             descuento.Show();
             this.Hide();
         }

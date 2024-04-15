@@ -205,49 +205,93 @@ namespace Grupo3ProyectoRad
         }
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            if (CHKRealizado.Checked == true)
+            if (ValidarDatos())
             {
-                MessageBox.Show("Pedido Ya Realizado");
-                dgvdetalle.Rows.Clear();
-                limpiarTodo();
-            }
-            else
-            {
-                if (dgvdetalle.Rows.Count > 0)
+                if (CHKRealizado.Checked == true)
                 {
-                    Pedido pedido = new Pedido();
-                    pedido.PedidoId = int.Parse(TxtPedidoId.Text);
-                    pedido.ClienteId = int.Parse(TxtClienteId.Text);
-                    pedido.FechaPedido = DTPFechaPedido.Value;
-                    pedido.FechaCreacion = DateTime.Now;
-                    pedido.Estado = true;
-                    pedido.Total = 0;
-                    decimal total = 0;
-
-                    List<PedidoDetalle> detalle = new List<PedidoDetalle>();
-                    foreach (DataGridViewRow fila in dgvdetalle.Rows)
+                    MessageBox.Show("Pedido Ya Realizado");
+                    dgvdetalle.Rows.Clear();
+                    limpiarTodo();
+                }
+                else
+                {
+                    if (TxtPedidoId.Text == "" || int.Parse(TxtPedidoId.Text) == 0)
                     {
-                        total += decimal.Parse(fila.Cells["TotalLinea"].Value.ToString());
-                        PedidoDetalle det = new PedidoDetalle();
-                        det.PedidoId = pedido.PedidoId;
-                        det.FechaCreacion = DateTime.Now;
-                        det.ProductosId = int.Parse(fila.Cells["ProductoId"].Value.ToString());
-                        det.Precio = decimal.Parse(fila.Cells["Precio"].Value.ToString());
-                        det.Descuento = decimal.Parse(fila.Cells["Descuento"].Value.ToString());
-                        det.SubTotal = decimal.Parse(fila.Cells["SubTotal"].Value.ToString());
-                        det.Total = decimal.Parse(fila.Cells["TotalLinea"].Value.ToString());
-                        detalle.Add(det);
+
+                        Pedido pedido = new Pedido();
+                        pedido.ClienteId = int.Parse(TxtClienteId.Text);
+                        pedido.FechaPedido = DTPFechaPedido.Value;
+                        pedido.FechaCreacion = DateTime.Now;
+                        pedido.Estado = false;
+                        pedido.Total = 0;
+                        decimal total = 0;
+
+                        List<PedidoDetalle> detalle = new List<PedidoDetalle>();
+                        foreach (DataGridViewRow fila in dgvdetalle.Rows)
+                        {
+                            total += decimal.Parse(fila.Cells["TotalLinea"].Value.ToString());
+                            PedidoDetalle det = new PedidoDetalle();
+                            det.PedidoId = pedido.PedidoId;
+                            det.FechaCreacion = DateTime.Now;
+                            det.ProductosId = int.Parse(fila.Cells["ProductoId"].Value.ToString());
+                            det.Precio = decimal.Parse(fila.Cells["Precio"].Value.ToString());
+                            det.Descuento = decimal.Parse(fila.Cells["Descuento"].Value.ToString());
+                            det.SubTotal = decimal.Parse(fila.Cells["SubTotal"].Value.ToString());
+                            det.Total = decimal.Parse(fila.Cells["TotalLinea"].Value.ToString());
+                            detalle.Add(det);
+                        }
+                        pedido.Descuento = int.Parse(txtDescuento.Text);
+                        pedido.SubTotal = decimal.Parse(TxtSubTotal.Text);
+                        pedido.Total = decimal.Parse(txtTotal.Text);
+
+                        //npedido.Guardar(pedido);
+                        //npedido.GuardarDetalle(detalle);
+                        if (npedido.GuardarPedido(pedido, detalle) >= 0)
+                        {
+                            dgvdetalle.Rows.Clear();
+                            limpiarTodo();
+                        }
                     }
-                    pedido.Descuento = int.Parse(txtDescuento.Text);
-                    pedido.SubTotal = decimal.Parse(TxtSubTotal.Text);
-                    pedido.Total = decimal.Parse(txtTotal.Text);
-
-                    //npedido.Guardar(pedido);
-                    //npedido.GuardarDetalle(detalle);
-                    if (npedido.GuardarPedido(pedido, detalle) >= 0)
+                    else
                     {
-                        dgvdetalle.Rows.Clear();
-                        limpiarTodo();
+                        if (dgvdetalle.Rows.Count > 0)
+                        {
+                            Pedido pedido = new Pedido();
+                            pedido.PedidoId = int.Parse(TxtPedidoId.Text);
+                            pedido.ClienteId = int.Parse(TxtClienteId.Text);
+                            pedido.FechaPedido = DTPFechaPedido.Value;
+                            pedido.FechaCreacion = DateTime.Now;
+                            pedido.Estado = false;
+                            pedido.Total = 0;
+                            decimal total = 0;
+
+                            List<PedidoDetalle> detalle = new List<PedidoDetalle>();
+                            foreach (DataGridViewRow fila in dgvdetalle.Rows)
+                            {
+                                total += decimal.Parse(fila.Cells["TotalLinea"].Value.ToString());
+                                PedidoDetalle det = new PedidoDetalle();
+                                det.PedidoId = pedido.PedidoId;
+                                det.FechaCreacion = DateTime.Now;
+                                det.ProductosId = int.Parse(fila.Cells["ProductoId"].Value.ToString());
+                                det.Precio = decimal.Parse(fila.Cells["Precio"].Value.ToString());
+                                det.Descuento = decimal.Parse(fila.Cells["Descuento"].Value.ToString());
+                                det.SubTotal = decimal.Parse(fila.Cells["SubTotal"].Value.ToString());
+                                det.Total = decimal.Parse(fila.Cells["TotalLinea"].Value.ToString());
+                                detalle.Add(det);
+                            }
+                            pedido.Descuento = int.Parse(txtDescuento.Text);
+                            pedido.SubTotal = decimal.Parse(TxtSubTotal.Text);
+                            pedido.Total = decimal.Parse(txtTotal.Text);
+
+                            //npedido.Guardar(pedido);
+                            //npedido.GuardarDetalle(detalle);
+                            if (npedido.GuardarPedido(pedido, detalle) >= 0)
+                            {
+                                dgvdetalle.Rows.Clear();
+                                limpiarTodo();
+                            }
+                        }
+
                     }
                 }
             }
@@ -341,7 +385,7 @@ namespace Grupo3ProyectoRad
 
                         if (int.Parse(TxtBuscarPedidos.Text) >= 1 && pedidos != null)
                         {
-                        if (pedidos.Estado == true)
+                        if (pedidos.Estado == true || pedidos.Total >0)
                         {
                             MessageBox.Show("Pedido Realizado");
                             limpiarTodo();
@@ -369,23 +413,24 @@ namespace Grupo3ProyectoRad
         }
         private void BTNBuscarPedido_Click(object sender, EventArgs e)
         {
-            VBuscarPedido vcliente = new VBuscarPedido();
+            VBuscarPedidoPend vcliente = new VBuscarPedidoPend();
             vcliente.ShowDialog();
-            if (vcliente.Estado =="True")
-            {
-                MessageBox.Show("Pedido Realizado");
-            }
-            else
-            {
-                TxtPedidoId.Text = vcliente.PedidoId;
-                TxtBuscarPedidos.Text = vcliente.PedidoId;
-                TxtClienteId.Text = vcliente.ClienteId;
-                TxtBuscarClientes.Text = vcliente.ClienteId;
-                DTPFechaPedido.Text = vcliente.FechaPedido;
-                LBLFechaCreacion.Text = "Fecha de Creacion:" + vcliente.FechaCreacion;
-                CHKRealizado.Checked = bool.Parse(vcliente.Estado);
-                BuscarCliente();
-            }
+                if (vcliente.Estado == true || vcliente.Total > 0)
+                {
+                    MessageBox.Show("Pedido Realizado");
+                    limpiarTodo();
+                }
+                else
+                {
+                    TxtPedidoId.Text = vcliente.PedidoId;
+                    TxtBuscarPedidos.Text = vcliente.PedidoId;
+                    TxtClienteId.Text = vcliente.ClienteId;
+                    TxtBuscarClientes.Text = vcliente.ClienteId;
+                    DTPFechaPedido.Text = vcliente.FechaPedido;
+                    LBLFechaCreacion.Text = "Fecha de Creacion:" + vcliente.FechaCreacion;
+                    CHKRealizado.Checked =vcliente.Estado;
+                    BuscarCliente();
+                }
 
         }
     }

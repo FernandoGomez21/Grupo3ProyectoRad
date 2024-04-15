@@ -13,7 +13,7 @@ namespace Grupo3ProyectoRad
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MenuPrin());
+            Application.Run(new fmrfactura());
         }
     }
 }

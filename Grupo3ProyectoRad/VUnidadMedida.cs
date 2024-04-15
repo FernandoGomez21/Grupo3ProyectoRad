@@ -40,21 +40,6 @@ namespace Grupo3ProyectoRad
             }
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("¿Está seguro que desea eliminar?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                if (!string.IsNullOrEmpty(TxtUnidadMedidaId.Text))
-                {
-                    var condicionPagoId = Convert.ToInt32(TxtUnidadMedidaId.Text);
-                    nUnidaMedidad.EliminarUnidadMedida(condicionPagoId);
-                    LimpiarDatos();
-                    CargarDatos();
-                    MessageBox.Show("Eliminado con Exito!!");
-                }
-            }
-        }
-
         private void LimpiarDatos()
         {
             TxtUnidadMedidaId.Clear();
@@ -70,8 +55,8 @@ namespace Grupo3ProyectoRad
             TxtCodigo.Text = DGVDatos.CurrentRow.Cells["Codigo"].Value.ToString();
             TxtDescripcion.Text = DGVDatos.CurrentRow.Cells["DescripcionUM"].Value.ToString();
             CHKActivo.Checked = bool.Parse(DGVDatos.CurrentRow.Cells["Estado"].Value.ToString());
-            btnEliminar.Enabled = true;
-            btnEliminar.BackColor = Color.Red;
+            BTNEliminar.Enabled = true;
+            BTNEliminar.BackColor = Color.Red;
         }
         private bool ValidarDatos()
         {
@@ -121,8 +106,8 @@ namespace Grupo3ProyectoRad
             TxtCodigo.Text = DGVDatos.CurrentRow.Cells["Codigo"].Value.ToString();
             TxtDescripcion.Text = DGVDatos.CurrentRow.Cells["DescripcionUM"].Value.ToString();
             CHKActivo.Checked = bool.Parse(DGVDatos.CurrentRow.Cells["Estado"].Value.ToString());
-            btnEliminar.Enabled = false;
-            btnEliminar.BackColor = Color.White;
+            BTNEliminar.Enabled = false;
+            BTNEliminar.BackColor = Color.White;
         }
 
         private void DGVDatos_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -131,13 +116,28 @@ namespace Grupo3ProyectoRad
             TxtCodigo.Text = DGVDatos.CurrentRow.Cells["Codigo"].Value.ToString();
             TxtDescripcion.Text = DGVDatos.CurrentRow.Cells["DescripcionUM"].Value.ToString();
             CHKActivo.Checked = bool.Parse(DGVDatos.CurrentRow.Cells["Estado"].Value.ToString());
-            btnEliminar.Enabled = true;
-            btnEliminar.BackColor = Color.Red;
+            BTNEliminar.Enabled = true;
+            BTNEliminar.BackColor = Color.Red;
         }
 
         private void BTNLimpiar_Click(object sender, EventArgs e)
         {
             LimpiarDatos();
+        }
+
+        private void BTNEliminar_Click_1(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Está seguro que desea eliminar?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (!string.IsNullOrEmpty(TxtUnidadMedidaId.Text))
+                {
+                    var condicionPagoId = Convert.ToInt32(TxtUnidadMedidaId.Text);
+                    nUnidaMedidad.EliminarUnidadMedida(condicionPagoId);
+                    LimpiarDatos();
+                    CargarDatos();
+                    MessageBox.Show("Eliminado con Exito!!");
+                }
+            }
         }
     }
 }

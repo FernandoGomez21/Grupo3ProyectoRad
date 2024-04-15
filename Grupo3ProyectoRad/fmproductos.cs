@@ -71,6 +71,12 @@ namespace Grupo3ProyectoRad
                 MessageBox.Show("Debe ingresar el Id de categoria", "Sistema", MessageBoxButtons.OK);
                 return FormularioValido;
             }
+            if (string.IsNullOrEmpty(txtPrecioCompra.Text.ToString()) || string.IsNullOrWhiteSpace(txtPrecioCompra.Text.ToString()))
+            {
+                FormularioValido = false;
+                MessageBox.Show("Debe ingresar la cantidad", "Sistema", MessageBoxButtons.OK);
+                return FormularioValido;
+            }
             return FormularioValido;
         }
         private void cargarDatos()

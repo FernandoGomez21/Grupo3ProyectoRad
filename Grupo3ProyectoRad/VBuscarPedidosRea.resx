@@ -117,33 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="BTNEliminar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAAWtJREFUSEvt1r8rRlEcx/GDRZGUbH5lYjKYlCJZzVZlMliUkoRJySYlCoP/QBYL
-        m1GZlMUqGaSU8vP9+R4n97nu87g951GG+6lXne+5957vPT336V6XM/04xws+MtxjETVJI66R1ShtGtFZ
-        RlhQu9xJ2cMTdFw7bUPV6UJY7BatyMoCwk1tayJPZpC++wuEhS6/5rIc4B067w3adfL4FnpRkleExf/C
-        Ekqi3yfrxFp4xgR+ZBThpClNROQGWufMqjL5Nw0H0emHFj36w35oqcM4mqzyiWr4iCM/tGxCT2O7Vf6G
-        dM2cVT5RDdMX6m+guR6rvq9btcqnaGgpGoYUDZWioaVcQ71cT/3QEhp2W+XcCFSvWOUT1XANk35oGcMu
-        6q1yrhmHGLDKJ6phNcnVcAih4awmqox2fgetc6KJcmlB+LbRJ98+kh9DeWlX4cbXUTEbCCfHekAHKqYB
-        87iCXrJZC/1GjY7Rh0Sc+wS+7TZKzgwNmwAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="BTNBuscar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAAb5JREFUWEftlcEyA0EQhteFCw52Nwcc8yi8guAJFImbUklldh09CE+BA+FRgniD
-        zGwZf/d2ykohY3aFw35VW5v9t6e7t7tnEtTU1LgSntiVSOnjWOmbONGPuDTf8+dOnNplMa2eqJ/tIvgo
-        Toz96ooS/Qy7HVlSHQjcwxe+SqC7KMlaYWrXg9QurvXsRp6cGeTvyU53ZWl5yDk7Vdo0lD4Q+VNgc0h2
-        ZF9JJaTnXPZZwSdwEtQOpZ9KzwQPHJVVmVuRnIgSc5+v022R/IADTDcNV9YSyQnY70kVrkTyA73EVjOW
-        B+4H0GBKBYYi+QEHY3JE0y6SE82OXZIExiL54V2B1G7SOpwLLyL5AQfX7AhbUSQnwn62z+sqmIFO7sgM
-        RHLALsD+gdbRehH9oH1Mxys7w/4W+Vtg15avH6EVqyL7QycanWxwbGYlwcH5JOSEL0QuDxLochL0ZThk
-        aJ/ToPF/Ae7U8/eyFy5lzsRFeagSfLxOBylcVHYkevlBrzIJmgkEOKLpRomH+K0pKD9j4CY9p6C/loQr
-        SOi0mARadC6v5sf/SGKqHQ1ltuXV/Cgm8ScJEBS4kZoteaypKRAEb0ivgmK7xwyGAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <metadata name="errorProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>114, 17</value>
-  </metadata>
 </root>
