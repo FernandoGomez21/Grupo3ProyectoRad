@@ -82,11 +82,11 @@
             // 
             this.BtnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.BtnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAgregar.Image = global::Grupo3ProyectoRad.Properties.Resources.guardar;
             this.BtnAgregar.Location = new System.Drawing.Point(222, 300);
             this.BtnAgregar.Name = "BtnAgregar";
             this.BtnAgregar.Size = new System.Drawing.Size(117, 38);
             this.BtnAgregar.TabIndex = 78;
-            this.BtnAgregar.Text = "Guardar";
             this.BtnAgregar.UseVisualStyleBackColor = false;
             this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
@@ -202,12 +202,12 @@
             // 
             this.BTNLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.BTNLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNLimpiar.Image = global::Grupo3ProyectoRad.Properties.Resources.cancelar;
             this.BTNLimpiar.Location = new System.Drawing.Point(489, 300);
             this.BTNLimpiar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BTNLimpiar.Name = "BTNLimpiar";
             this.BTNLimpiar.Size = new System.Drawing.Size(117, 38);
             this.BTNLimpiar.TabIndex = 94;
-            this.BTNLimpiar.Text = "Limpiar";
             this.BTNLimpiar.UseVisualStyleBackColor = false;
             this.BTNLimpiar.Click += new System.EventHandler(this.BTNLimpiar_Click);
             // 

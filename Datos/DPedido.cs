@@ -75,8 +75,7 @@ namespace Datos
                 {
                     ClienteInDb.PedidoId = pedido.PedidoId;
                     ClienteInDb.ClienteId = pedido.ClienteId;
-                    ClienteInDb.FechaCreacion = pedido.FechaCreacion;
-                    ClienteInDb.FechaPedido = pedido.FechaCreacion;
+                    ClienteInDb.FechaPedido = pedido.FechaPedido;
                     ClienteInDb.Estado = pedido.Estado;
                     ClienteInDb.Total = pedido.Total;
                     ClienteInDb.SubTotal = pedido.SubTotal;

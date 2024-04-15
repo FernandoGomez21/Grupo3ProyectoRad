@@ -46,18 +46,27 @@ namespace Grupo3ProyectoRad
                 {
                     if (int.Parse(TxtPedidoId.Text.ToString()) != 0)
                     {
-                        if(CHKEstado.Checked == true)
+                        if (decimal.Parse(txtTotal.Text) > 0)
                         {
                             MessageBox.Show("Lo sentimos, No pudimos eliminarlo debido a que ya fue Procesado");
-                        }
-                        else
-                        {
-                            var pedidoid = int.Parse(TxtPedidoId.Text.ToString());
-                            nPedido.EliminarPedido(pedidoid);
-                            cargarDatos();
                             LimpiarDatos();
-                            MessageBox.Show("Eliminado con Exito!!");
+                        }else
+                        {
+                            if (CHKEstado.Checked == true || decimal.Parse(txtTotal.Text) > 0)
+                            {
+                                MessageBox.Show("Lo sentimos, No pudimos eliminarlo debido a que ya fue Procesado");
+                                LimpiarDatos();
+                            }
+                            else
+                            {
+                                var pedidoid = int.Parse(TxtPedidoId.Text.ToString());
+                                nPedido.EliminarPedido(pedidoid);
+                                cargarDatos();
+                                LimpiarDatos();
+                                MessageBox.Show("Eliminado con Exito!!");
+                            }
                         }
+                       
                     }
                 }
             }
@@ -82,7 +91,7 @@ namespace Grupo3ProyectoRad
         }
         private void cargarDatos()
         {
-            var clientes = nPedido.PedidosActivos().Select(c => new { c.PedidoId, c.ClienteId,c.Cliente.Nombres, c.FechaPedido, c.Estado,   c.Total, c.SubTotal, c.Descuento });
+            var clientes = nPedido.PedidosActivos().Select(c => new { c.PedidoId, c.ClienteId,c.Cliente.Nombres, c.FechaPedido, c.Estado,   c.Total, c.SubTotal, c.Descuento, c.FechaCreacion });
             DGVDatos.DataSource = clientes.ToList();
         }
         private void VPedidos_Load(object sender, EventArgs e)
@@ -98,6 +107,18 @@ namespace Grupo3ProyectoRad
             {
                 FormularioValido = false;
                 errorProvider1.SetError(TxtClienteId, "Debe ingresar el ClienteId ");
+                return FormularioValido;
+            }
+            if (string.IsNullOrEmpty(TxtNombre.Text.ToString()) || string.IsNullOrWhiteSpace(TxtNombre.Text.ToString()))
+            {
+                FormularioValido = false;
+                errorProvider1.SetError(TxtNombre, "Debe ingresar el Nombre ");
+                return FormularioValido;
+            }
+            if (string.IsNullOrEmpty(TxtCondicionPago.Text.ToString()) || string.IsNullOrWhiteSpace(TxtCondicionPago.Text.ToString()))
+            {
+                FormularioValido = false;
+                errorProvider1.SetError(TxtCondicionPago, "Debe ingresar condicion de Pago ");
                 return FormularioValido;
             }
             return FormularioValido;
@@ -120,24 +141,54 @@ namespace Grupo3ProyectoRad
         {
             if (ValidarDatos())
             {
-                Pedido pedido = new Pedido()
+                if (TxtPedidoId.Text == "")
                 {
-                    ClienteId = int.Parse(TxtClienteId.Text),
-                    FechaCreacion = DateTime.Now,
-                    FechaPedido = DTPFechaPedido.Value,
-                    Estado = CHKEstado.Checked
-                };
-                if (!string.IsNullOrEmpty(TxtPedidoId.Text) || !string.IsNullOrWhiteSpace(TxtPedidoId.Text))
-                {
-                    if (int.Parse(TxtPedidoId.Text.ToString()) != 0)
+                    Pedido pedido = new Pedido()
                     {
-                        pedido.PedidoId = int.Parse(TxtPedidoId.Text.ToString());
+                        ClienteId = int.Parse(TxtClienteId.Text),
+                        FechaCreacion = DateTime.Now,
+                        FechaPedido = DTPFechaPedido.Value,
+                        Estado = false,
+
+                    };
+                    if (!string.IsNullOrEmpty(TxtPedidoId.Text) || !string.IsNullOrWhiteSpace(TxtPedidoId.Text))
+                    {
+                        if (int.Parse(TxtPedidoId.Text.ToString()) != 0)
+                        {
+                            pedido.PedidoId = int.Parse(TxtPedidoId.Text.ToString());
+                        }
+                    }
+                    nPedido.Guardar(pedido);
+                    LimpiarDatos();
+                    cargarDatos();
+                }
+                else
+                {
+                    if (ValidarDatos())
+                    {
+                        Pedido pedido = new Pedido()
+                        {
+                            ClienteId = int.Parse(TxtClienteId.Text),
+                            FechaPedido = DTPFechaPedido.Value,
+                            Estado = CHKEstado.Checked,
+                            Descuento = int.Parse(txtDescuento.Text),
+                            SubTotal = decimal.Parse(TxtSubTotal.Text),
+                            Total = decimal.Parse(txtTotal.Text),
+                        };
+                        if (!string.IsNullOrEmpty(TxtPedidoId.Text) || !string.IsNullOrWhiteSpace(TxtPedidoId.Text))
+                        {
+                            if (int.Parse(TxtPedidoId.Text.ToString()) != 0)
+                            {
+                                pedido.PedidoId = int.Parse(TxtPedidoId.Text.ToString());
+                            }
+                        }
+                        nPedido.Guardar(pedido);
+                        LimpiarDatos();
+                        cargarDatos();
                     }
                 }
-                nPedido.Guardar(pedido);
-                LimpiarDatos();
-                cargarDatos();
             }
+
         }
 
         private void DGVDatos_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -178,11 +229,19 @@ namespace Grupo3ProyectoRad
             {
                 var clienteId = int.Parse(TxtClienteId.Text);
                 var cliente = nClienteModels.ClientesActivos().FirstOrDefault(c => c.ClienteId == clienteId);
-                TxtNombre.Text = cliente.Nombres;
-                TxtApellido.Text = cliente.Apellidos;
-                TxtCondicionPago.Text = cliente.CondicionPago.DescripcionCP;
-                TxtDias.Text = cliente.CondicionPago.Dias.ToString();
-                txtDescuento.Text = cliente.GrupoDescuento.Porcentaje.ToString();
+                if (cliente !=null)
+                {
+                    TxtNombre.Text = cliente.Nombres;
+                    TxtApellido.Text = cliente.Apellidos;
+                    TxtCondicionPago.Text = cliente.CondicionPago.DescripcionCP;
+                    TxtDias.Text = cliente.CondicionPago.Dias.ToString();
+                    txtDescuento.Text = cliente.GrupoDescuento.Porcentaje.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Cliente Inactivo");
+                    LimpiarDatos(); 
+                }
 
             }
             else

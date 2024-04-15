@@ -198,13 +198,14 @@
             // 
             // TxtLimpiar
             // 
+            this.TxtLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.TxtLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtLimpiar.Location = new System.Drawing.Point(626, 272);
             this.TxtLimpiar.Name = "TxtLimpiar";
             this.TxtLimpiar.Size = new System.Drawing.Size(100, 38);
             this.TxtLimpiar.TabIndex = 83;
             this.TxtLimpiar.Text = "Limpiar";
-            this.TxtLimpiar.UseVisualStyleBackColor = true;
+            this.TxtLimpiar.UseVisualStyleBackColor = false;
             this.TxtLimpiar.Click += new System.EventHandler(this.TxtLimpiar_Click);
             // 
             // BTNEliminar
@@ -220,6 +221,7 @@
             // 
             // btnguardar
             // 
+            this.btnguardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnguardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnguardar.Image = global::Grupo3ProyectoRad.Properties.Resources.guardar;
             this.btnguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -229,7 +231,7 @@
             this.btnguardar.TabIndex = 81;
             this.btnguardar.Text = "Guardar";
             this.btnguardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnguardar.UseVisualStyleBackColor = true;
+            this.btnguardar.UseVisualStyleBackColor = false;
             this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
             // errorProvider1

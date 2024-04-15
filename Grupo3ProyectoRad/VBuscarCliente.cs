@@ -35,6 +35,7 @@ namespace Grupo3ProyectoRad
                             r.CondicionPago.Dias,
                             r.CondicionPago.DescripcionCP,
                             r.GrupoDescuento.Porcentaje,
+                            
                         };
             dgvProductos.DataSource = lista.ToList();
             
