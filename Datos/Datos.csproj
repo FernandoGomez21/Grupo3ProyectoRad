@@ -70,6 +70,7 @@
     <Compile Include="DClienteModels.cs" />
     <Compile Include="DCondicionPago.cs" />
     <Compile Include="DFactura.cs" />
+    <Compile Include="DFacturaDetalle.cs" />
     <Compile Include="DGrupoDescuento.cs" />
     <Compile Include="DPedido.cs" />
     <Compile Include="DPedidoDetalle.cs" />
