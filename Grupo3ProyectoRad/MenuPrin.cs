@@ -9,7 +9,9 @@ namespace Grupo3ProyectoRad
         public MenuPrin()
         {
             InitializeComponent();
+ 
         }
+
         private void grupoDescuentoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GrupoDescuentoV grupoDescuento = new GrupoDescuentoV();
@@ -51,7 +53,7 @@ namespace Grupo3ProyectoRad
 
         private void menuPrincipalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MenuPrin menuPrin = new MenuPrin();
+            Integrantes menuPrin = new Integrantes();
             menuPrin.Show();
             this.Hide();
         }
@@ -87,5 +89,6 @@ namespace Grupo3ProyectoRad
             descuento.Show();
             this.Hide();
         }
+
     }
 }
