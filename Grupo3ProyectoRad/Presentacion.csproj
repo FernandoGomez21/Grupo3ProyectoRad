@@ -80,6 +80,12 @@
     <Compile Include="GrupoDescuentoV.Designer.cs">
       <DependentUpon>GrupoDescuentoV.cs</DependentUpon>
     </Compile>
+    <Compile Include="Integrantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Integrantes.Designer.cs">
+      <DependentUpon>Integrantes.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuPrin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GrupoDescuentoV.resx">
       <DependentUpon>GrupoDescuentoV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Integrantes.resx">
+      <DependentUpon>Integrantes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPrin.resx">
       <DependentUpon>MenuPrin.cs</DependentUpon>
