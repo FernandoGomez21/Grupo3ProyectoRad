@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Datos.BaseDatos.Models;
 using Grupo3PrimerFase;
 
 namespace Grupo3ProyectoRad
@@ -90,5 +91,11 @@ namespace Grupo3ProyectoRad
             this.Hide();
         }
 
+        private void facturaDetalleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmDetalleFactura descuento = new FrmDetalleFactura();
+            descuento.Show();
+            this.Hide();
+        }
     }
 }

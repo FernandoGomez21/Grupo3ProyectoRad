@@ -45,6 +45,7 @@
             this.facturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pedidosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.facturaDetalleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,7 +87,7 @@
             // 
             this.clientesToolStripMenuItem1.Image = global::Grupo3ProyectoRad.Properties.Resources.user;
             this.clientesToolStripMenuItem1.Name = "clientesToolStripMenuItem1";
-            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(217, 26);
+            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.clientesToolStripMenuItem1.Text = "Clientes";
             this.clientesToolStripMenuItem1.Click += new System.EventHandler(this.clientesToolStripMenuItem1_Click);
             // 
@@ -94,7 +95,7 @@
             // 
             this.grupoDescuentoToolStripMenuItem.Image = global::Grupo3ProyectoRad.Properties.Resources.users;
             this.grupoDescuentoToolStripMenuItem.Name = "grupoDescuentoToolStripMenuItem";
-            this.grupoDescuentoToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
+            this.grupoDescuentoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.grupoDescuentoToolStripMenuItem.Text = "GrupoDescuento";
             this.grupoDescuentoToolStripMenuItem.Click += new System.EventHandler(this.grupoDescuentoToolStripMenuItem_Click);
             // 
@@ -102,7 +103,7 @@
             // 
             this.condicionDePagoToolStripMenuItem1.Image = global::Grupo3ProyectoRad.Properties.Resources.pago1;
             this.condicionDePagoToolStripMenuItem1.Name = "condicionDePagoToolStripMenuItem1";
-            this.condicionDePagoToolStripMenuItem1.Size = new System.Drawing.Size(217, 26);
+            this.condicionDePagoToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.condicionDePagoToolStripMenuItem1.Text = "Condicion de Pago";
             this.condicionDePagoToolStripMenuItem1.Click += new System.EventHandler(this.condicionDePagoToolStripMenuItem1_Click);
             // 
@@ -121,7 +122,7 @@
             // 
             this.productosToolStripMenuItem1.Image = global::Grupo3ProyectoRad.Properties.Resources.lista;
             this.productosToolStripMenuItem1.Name = "productosToolStripMenuItem1";
-            this.productosToolStripMenuItem1.Size = new System.Drawing.Size(216, 26);
+            this.productosToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.productosToolStripMenuItem1.Text = "Productos";
             this.productosToolStripMenuItem1.Click += new System.EventHandler(this.productosToolStripMenuItem1_Click);
             // 
@@ -129,7 +130,7 @@
             // 
             this.unidadDeMedidaToolStripMenuItem.Image = global::Grupo3ProyectoRad.Properties.Resources.nuevo;
             this.unidadDeMedidaToolStripMenuItem.Name = "unidadDeMedidaToolStripMenuItem";
-            this.unidadDeMedidaToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.unidadDeMedidaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.unidadDeMedidaToolStripMenuItem.Text = "Unidad de Medida";
             this.unidadDeMedidaToolStripMenuItem.Click += new System.EventHandler(this.unidadDeMedidaToolStripMenuItem_Click);
             // 
@@ -137,7 +138,7 @@
             // 
             this.categoriaToolStripMenuItem1.Image = global::Grupo3ProyectoRad.Properties.Resources.carne;
             this.categoriaToolStripMenuItem1.Name = "categoriaToolStripMenuItem1";
-            this.categoriaToolStripMenuItem1.Size = new System.Drawing.Size(216, 26);
+            this.categoriaToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.categoriaToolStripMenuItem1.Text = "Categoria";
             this.categoriaToolStripMenuItem1.Click += new System.EventHandler(this.categoriaToolStripMenuItem1_Click);
             // 
@@ -155,7 +156,7 @@
             // 
             this.pedidoToolStripMenuItem.Image = global::Grupo3ProyectoRad.Properties.Resources.lista;
             this.pedidoToolStripMenuItem.Name = "pedidoToolStripMenuItem";
-            this.pedidoToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
+            this.pedidoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.pedidoToolStripMenuItem.Text = "Pedido";
             this.pedidoToolStripMenuItem.Click += new System.EventHandler(this.pedidoToolStripMenuItem_Click);
             // 
@@ -163,14 +164,15 @@
             // 
             this.pedidoDetalleToolStripMenuItem.Image = global::Grupo3ProyectoRad.Properties.Resources.matricula;
             this.pedidoDetalleToolStripMenuItem.Name = "pedidoDetalleToolStripMenuItem";
-            this.pedidoDetalleToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
+            this.pedidoDetalleToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.pedidoDetalleToolStripMenuItem.Text = "Pedido Detalle";
             this.pedidoDetalleToolStripMenuItem.Click += new System.EventHandler(this.pedidoDetalleToolStripMenuItem_Click);
             // 
             // facturacionToolStripMenuItem
             // 
             this.facturacionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.facturasToolStripMenuItem});
+            this.facturasToolStripMenuItem,
+            this.facturaDetalleToolStripMenuItem});
             this.facturacionToolStripMenuItem.Image = global::Grupo3ProyectoRad.Properties.Resources.pago1;
             this.facturacionToolStripMenuItem.Name = "facturacionToolStripMenuItem";
             this.facturacionToolStripMenuItem.Size = new System.Drawing.Size(118, 24);
@@ -180,7 +182,7 @@
             // 
             this.facturasToolStripMenuItem.Image = global::Grupo3ProyectoRad.Properties.Resources.matricula;
             this.facturasToolStripMenuItem.Name = "facturasToolStripMenuItem";
-            this.facturasToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
+            this.facturasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.facturasToolStripMenuItem.Text = "Facturas";
             this.facturasToolStripMenuItem.Click += new System.EventHandler(this.facturasToolStripMenuItem_Click);
             // 
@@ -197,6 +199,14 @@
             this.pedidosToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
             this.pedidosToolStripMenuItem.Text = "PedidoDetalle";
             this.pedidosToolStripMenuItem.Click += new System.EventHandler(this.pedidosToolStripMenuItem_Click);
+            // 
+            // facturaDetalleToolStripMenuItem
+            // 
+            this.facturaDetalleToolStripMenuItem.Image = global::Grupo3ProyectoRad.Properties.Resources.pago;
+            this.facturaDetalleToolStripMenuItem.Name = "facturaDetalleToolStripMenuItem";
+            this.facturaDetalleToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.facturaDetalleToolStripMenuItem.Text = "Factura Detalle";
+            this.facturaDetalleToolStripMenuItem.Click += new System.EventHandler(this.facturaDetalleToolStripMenuItem_Click);
             // 
             // MenuPrin
             // 
@@ -236,6 +246,7 @@
         private System.Windows.Forms.ToolStripMenuItem pedidoDetalleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem facturacionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem facturasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem facturaDetalleToolStripMenuItem;
     }
 }
 

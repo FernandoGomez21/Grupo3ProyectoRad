@@ -26,8 +26,10 @@ namespace Negocio
         {
             return dfactura.FacturaTodos().Where(c => c.Estado == true).ToList();
         }
-
-
+        public List<Factura> FacturaInactivas()
+        {
+            return dfactura.FacturaTodos().Where(c => c.Estado == false).ToList();
+        }
         public int AgregarFactura(Factura factura)
         {
             return dfactura.GuardarFactura(factura);
